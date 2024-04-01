@@ -10,7 +10,7 @@ namespace SnakeGame
     {
         public void CheckKey()
         {
-            int a = 1; int b = 2;
+            
         }
     }
 }

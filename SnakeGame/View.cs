@@ -9,23 +9,24 @@ namespace SnakeGame
 {
     internal class View
     {
-        public void CreateMap(Form form, int width, int height, int sizePlane)
+        public void CreateMap(Form form, int width, int height, int _sizeHead)
         {
-            form.BackColor = Color.Green;
-            for (int i=0; i <= width/sizePlane; i++)
+
+            form.BackColor = Color.White;
+            for (int i=0; i <= width/ _sizeHead; i++)
             {
                 PictureBox pictureBox = new PictureBox();
                 pictureBox.BackColor = Color.Black;
-                pictureBox.Location = new Point(0, sizePlane * i);
-                pictureBox.Size = new Size(width - 100, 1);
+                pictureBox.Location = new Point(0, _sizeHead * i);
+                pictureBox.Size = new Size(width, 1);
                 form.Controls.Add(pictureBox);
             }
-            for (int i = 0; i <= height / sizePlane; i++)
+            for (int i = 0; i <= height / _sizeHead; i++)
             {
                 PictureBox pictureBox = new PictureBox();
                 pictureBox.BackColor = Color.Black;
-                pictureBox.Location = new Point(sizePlane * i, 0);
-                pictureBox.Size = new Size(1, width);
+                pictureBox.Location = new Point(_sizeHead * i, 0);
+                pictureBox.Size = new Size(1, height - 220);
                 form.Controls.Add(pictureBox);
             }
         }

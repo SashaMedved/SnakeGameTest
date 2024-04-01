@@ -2,9 +2,11 @@ namespace SnakeGame
 {
     public partial class Form1 : Form
     {
-        private int _width = 900;
-        private int _height = 800;
-        private int _sizePlane = 40;
+
+        /* параметры */
+        private int _width = 496;
+        private int _height = 700;
+        private int _sizeHead = 20;
         private View view;
         private Controller controller;
         private Model model;
@@ -19,9 +21,9 @@ namespace SnakeGame
             this.Width = _width;
             this.Height = _height;
             model.StartProgram(this);
-            view.CreateMap(this, _width, _height, _sizePlane);
+            view.CreateMap(this, _width, _height, _sizeHead);
         }
-
+        /* закрывание игра с подтверждением */
         protected override void OnFormClosing(FormClosingEventArgs eventArgs)
         {
             var result = MessageBox.Show("Вы действительно хотиите закрыть игру?", "",

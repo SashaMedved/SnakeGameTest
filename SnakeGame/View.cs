@@ -12,6 +12,7 @@ namespace SnakeGame
         public void CreateMap(Form form, int width, int height, int sizePlane)
         {
             form.BackColor = Color.Green;
+            int d = 1;
             for (int i=0; i <= width/sizePlane; i++)
             {
                 PictureBox pictureBox = new PictureBox();

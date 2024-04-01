@@ -30,37 +30,37 @@ namespace SnakeGame
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            snakeHead = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)snakeHead).BeginInit();
+            snake = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)snake).BeginInit();
             SuspendLayout();
             // 
-            // snakeHead
+            // snake
             // 
-            snakeHead.BackColor = SystemColors.ActiveCaptionText;
-            snakeHead.Location = new Point(326, 275);
-            snakeHead.Name = "snakeHead";
-            snakeHead.Size = new Size(20, 20);
-            snakeHead.TabIndex = 0;
-            snakeHead.TabStop = false;
+            snake.BackColor = SystemColors.ActiveCaptionText;
+            snake.Location = new Point(326, 275);
+            snake.Name = "snake";
+            snake.Size = new Size(20, 20);
+            snake.TabIndex = 0;
+            snake.TabStop = false;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(480, 661);
-            Controls.Add(snakeHead);
+            Controls.Add(snake);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximumSize = new Size(496, 700);
             MinimumSize = new Size(496, 700);
             Name = "Form1";
             Text = "Snake";
-            ((System.ComponentModel.ISupportInitialize)snakeHead).EndInit();
+            ((System.ComponentModel.ISupportInitialize)snake).EndInit();
             ResumeLayout(false);
         }
 
 
         #endregion
 
-        private PictureBox snakeHead;
+        private PictureBox snake;
     }
 }

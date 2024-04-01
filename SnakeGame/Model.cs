@@ -24,9 +24,9 @@ namespace SnakeGame
 
         }
 
-        public void SnakeMove()
+        public void SnakeMove(object myObject, EventArgs eventArgs)
         {
-
+            snake.Location = new Point(snake.Location.X + form1._sizeHead * dirX, snake.Location.Y + form1._sizeHead * dirY);
         }
 
         public void BorderCheck()

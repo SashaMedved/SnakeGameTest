@@ -39,7 +39,7 @@ namespace SnakeGame
             // snake
             // 
             snake.BackColor = SystemColors.ActiveCaptionText;
-            snake.Location = new Point(326, 275);
+            snake.Location = new Point(260, 260);
             snake.Name = "snake";
             snake.Size = new Size(20, 20);
             snake.TabIndex = 0;

@@ -8,9 +8,6 @@ namespace SnakeGame
 {
     internal class Controller
     {
-        public void CheckKey()
-        {
-            
-        }
+
     }
 }

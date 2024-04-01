@@ -7,6 +7,7 @@ using System.Windows.Forms;
 
 namespace SnakeGame
 {
+    
     internal class View
     {
         public void CreateMap(Form form, int width, int height, int _sizeHead)

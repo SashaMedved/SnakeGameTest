@@ -1,4 +1,5 @@
-﻿namespace SnakeGame
+﻿
+namespace SnakeGame
 {
     partial class Form1
     {
@@ -29,19 +30,37 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            snakeHead = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)snakeHead).BeginInit();
             SuspendLayout();
+            // 
+            // snakeHead
+            // 
+            snakeHead.BackColor = SystemColors.ActiveCaptionText;
+            snakeHead.Location = new Point(326, 275);
+            snakeHead.Name = "snakeHead";
+            snakeHead.Size = new Size(20, 20);
+            snakeHead.TabIndex = 0;
+            snakeHead.TabStop = false;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(480, 661);
+            Controls.Add(snakeHead);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximumSize = new Size(496, 700);
+            MinimumSize = new Size(496, 700);
             Name = "Form1";
             Text = "Snake";
+            ((System.ComponentModel.ISupportInitialize)snakeHead).EndInit();
             ResumeLayout(false);
         }
 
+
         #endregion
+
+        private PictureBox snakeHead;
     }
 }

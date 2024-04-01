@@ -29,8 +29,10 @@ namespace SnakeGame
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             snake = new PictureBox();
+            timer = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)snake).BeginInit();
             SuspendLayout();
             // 
@@ -61,6 +63,7 @@ namespace SnakeGame
 
         #endregion
 
-        private PictureBox snake;
+        public PictureBox snake;
+        private System.Windows.Forms.Timer timer;
     }
 }

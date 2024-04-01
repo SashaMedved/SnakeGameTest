@@ -17,7 +17,7 @@ namespace SnakeGame
             for (int i=0; i <= width/ _sizeHead; i++)
             {
                 PictureBox pictureBox = new PictureBox();
-                pictureBox.BackColor = Color.Black;
+                pictureBox.BackColor = Color.DarkGray;
                 pictureBox.Location = new Point(0, _sizeHead * i);
                 pictureBox.Size = new Size(width, 1);
                 form.Controls.Add(pictureBox);
@@ -25,7 +25,7 @@ namespace SnakeGame
             for (int i = 0; i <= height / _sizeHead; i++)
             {
                 PictureBox pictureBox = new PictureBox();
-                pictureBox.BackColor = Color.Black;
+                pictureBox.BackColor = Color.DarkGray;
                 pictureBox.Location = new Point(_sizeHead * i, 0);
                 pictureBox.Size = new Size(1, height - 220);
                 form.Controls.Add(pictureBox);

@@ -38,7 +38,8 @@ namespace SnakeGame
             // 
             // snake
             // 
-            snake.BackColor = SystemColors.ActiveCaptionText;
+            snake.BackColor = Color.FromArgb(64, 64, 64);
+            snake.Image = (Image)resources.GetObject("snake.Image");
             snake.Location = new Point(260, 260);
             snake.Name = "snake";
             snake.Size = new Size(20, 20);
@@ -49,11 +50,12 @@ namespace SnakeGame
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(480, 661);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.None;
+            ClientSize = new Size(497, 706);
             Controls.Add(snake);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            MaximumSize = new Size(496, 700);
-            MinimumSize = new Size(496, 700);
+            MinimumSize = new Size(497, 730);
             Name = "Form1";
             Text = "Snake";
             ((System.ComponentModel.ISupportInitialize)snake).EndInit();

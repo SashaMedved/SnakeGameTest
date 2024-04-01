@@ -36,8 +36,8 @@
             // 
             // snake
             // 
-            snake.BackColor = SystemColors.HotTrack;
-            snake.Location = new Point(274, 101);
+            snake.BackColor = Color.Red;
+            snake.Location = new Point(0, 0);
             snake.Name = "snake";
             snake.Size = new Size(40, 40);
             snake.TabIndex = 0;

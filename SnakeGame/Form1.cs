@@ -19,14 +19,19 @@ namespace SnakeGame
             this.Width = _width;
             this.Height = _height;
 
+            Start();
+
+            this.KeyDown += new KeyEventHandler(controller.CheckKey);
+        }
+
+        public void Start()
+        {
             model.StartProgram(this);
             view.CreateMap(this, _width, _height, _sizePlane);
 
             timer.Tick += new EventHandler(model.SnakeMove);
             timer.Interval = 500;
             timer.Start();
-
-            this.KeyDown += new KeyEventHandler(controller.CheckKey);
         }
 
         protected override void OnFormClosing(FormClosingEventArgs eventArgs)

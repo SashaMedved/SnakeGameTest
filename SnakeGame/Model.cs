@@ -19,14 +19,14 @@ namespace SnakeGame
             snake = form1.Controls["snake"] as PictureBox;
         }
 
-        public void EatFood()
-        {
-            
-        }
-
         public void SnakeMove(object myObject, EventArgs eventArgs)
         {
             snake.Location = new Point(snake.Location.X + form1._sizePlane * dirX, snake.Location.Y + form1._sizePlane * dirY);
+        }
+
+        public void EatFood()
+        {
+            
         }
 
         public void BorderCheck()
@@ -37,6 +37,8 @@ namespace SnakeGame
         public void StartProgram(Form form)
         {
             form.StartPosition = FormStartPosition.CenterScreen;
+            form.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            form.MaximizeBox = false;
         }
     }
 }

@@ -4,7 +4,7 @@ namespace SnakeGame
     {
         private int _width = 900;
         private int _height = 800;
-        private int _sizePlane = 40;
+        public int _sizePlane = 40;
         private View view;
         private Controller controller;
         private Model model;
@@ -12,14 +12,21 @@ namespace SnakeGame
         {
             InitializeComponent();
 
-            model = new Model();
-            controller = new Controller();
+            model = new Model(this);
+            controller = new Controller(model);
             view = new View();
 
             this.Width = _width;
             this.Height = _height;
+
             model.StartProgram(this);
             view.CreateMap(this, _width, _height, _sizePlane);
+
+            timer.Tick += new EventHandler(model.SnakeMove);
+            timer.Interval = 500;
+            timer.Start();
+
+            this.KeyDown += new KeyEventHandler(controller.CheckKey);
         }
 
         protected override void OnFormClosing(FormClosingEventArgs eventArgs)

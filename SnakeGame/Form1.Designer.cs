@@ -28,12 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            components = new System.ComponentModel.Container();
+            snake = new PictureBox();
+            timer = new System.Windows.Forms.Timer(components);
+            ((System.ComponentModel.ISupportInitialize)snake).BeginInit();
+            SuspendLayout();
+            // 
+            // snake
+            // 
+            snake.BackColor = SystemColors.HotTrack;
+            snake.Location = new Point(274, 101);
+            snake.Name = "snake";
+            snake.Size = new Size(40, 40);
+            snake.TabIndex = 0;
+            snake.TabStop = false;
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(snake);
+            Name = "Form1";
+            Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)snake).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private PictureBox snake;
+        private System.Windows.Forms.Timer timer;
     }
 }

@@ -54,6 +54,7 @@
             buttonRight.Name = "buttonRight";
             buttonRight.Size = new Size(20, 20);
             buttonRight.TabIndex = 1;
+            buttonRight.TabStop = false;
             buttonRight.UseVisualStyleBackColor = true;
             // 
             // buttonLeft
@@ -62,7 +63,8 @@
             buttonLeft.Name = "buttonLeft";
             buttonLeft.Size = new Size(20, 20);
             buttonLeft.TabIndex = 2;
-            buttonLeft.UseVisualStyleBackColor = true;         
+            buttonLeft.TabStop = false;
+            buttonLeft.UseVisualStyleBackColor = true;
             // 
             // buttonUp
             // 
@@ -70,6 +72,7 @@
             buttonUp.Name = "buttonUp";
             buttonUp.Size = new Size(20, 20);
             buttonUp.TabIndex = 3;
+            buttonUp.TabStop = false;
             buttonUp.UseVisualStyleBackColor = true;
             // 
             // buttonDown
@@ -78,6 +81,7 @@
             buttonDown.Name = "buttonDown";
             buttonDown.Size = new Size(20, 20);
             buttonDown.TabIndex = 4;
+            buttonDown.TabStop = false;
             buttonDown.UseVisualStyleBackColor = true;
             // 
             // Form1

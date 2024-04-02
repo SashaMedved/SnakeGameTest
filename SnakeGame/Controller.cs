@@ -8,36 +8,38 @@ namespace SnakeGame
 {
     internal class Controller
     {
-        private Model model;
+        private Model _model;
 
         public Controller(Model model)
         {
-            this.model = model;
+            this._model = model;
         }
 
-        public void CheckKey(object sender, KeyEventArgs e)
+        public void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            switch (e.KeyCode.ToString())
+            CheckKey(sender, e.KeyCode.ToString());
+        }
+
+        public void CheckKey(object sender, string keyCode)
+        {
+            switch (keyCode)
             {
-                case "Right":
                 case "D":
-                    model.dirY = 0;
-                    model.dirX = 1;
+
+                    _model.dirY = 0;
+                    _model.dirX = 1;
                     break;
-                case "Left":
                 case "A":
-                    model.dirX = -1;
-                    model.dirY = 0;
+                    _model.dirX = -1;
+                    _model.dirY = 0;
                     break;
-                case "Up":
                 case "W":
-                    model.dirX = 0;
-                    model.dirY = -1;
+                    _model.dirX = 0;
+                    _model.dirY = -1;
                     break;
-                case "Down":
                 case "S":
-                    model.dirX = 0;
-                    model.dirY = 1;
+                    _model.dirX = 0;
+                    _model.dirY = 1;
                     break;
             }
         }

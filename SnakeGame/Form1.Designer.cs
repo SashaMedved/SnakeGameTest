@@ -29,13 +29,21 @@ namespace SnakeGame
         /// </summary>
         private void InitializeComponent()
         {
+            
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             snake = new PictureBox();
             timer = new System.Windows.Forms.Timer(components);
             Score = new Label();
+            food = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)snake).BeginInit();
             SuspendLayout();
+            // 
+            // food
+            // 
+
+            food.BackColor = Color.Red;
+            food.Size = new Size(_sizeHead, _sizeHead);
             // 
             // snake
             // 
@@ -76,13 +84,16 @@ namespace SnakeGame
             ((System.ComponentModel.ISupportInitialize)snake).EndInit();
             ResumeLayout(false);
             PerformLayout();
+
+            
         }
 
 
         #endregion
-
+        public PictureBox food;
         public PictureBox snake;
         private System.Windows.Forms.Timer timer;
         private Label Score;
+        
     }
 }

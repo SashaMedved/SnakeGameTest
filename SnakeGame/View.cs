@@ -11,6 +11,7 @@ namespace SnakeGame
     
     internal class View
     {
+
         public void CreateMap(Form form, int width, int height, int _sizeHead)
         {
 
@@ -33,6 +34,8 @@ namespace SnakeGame
                 pictureBox.Size = new Size(1, height - 220);
                 form.Controls.Add(pictureBox);
             }
+
         }
+
     }
 }

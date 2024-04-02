@@ -2,7 +2,7 @@ using System.Drawing.Text;
 
 namespace SnakeGame
 {
-    public partial class Form1 : Form
+    public partial class s : Form
     {
 
         /* параметры */
@@ -12,7 +12,7 @@ namespace SnakeGame
         private View view;
         private Controller controller;
         private Model model;
-        public Form1()
+        public s()
         {
             InitializeComponent();
 
@@ -25,7 +25,10 @@ namespace SnakeGame
 
             Start();
 
+            this.KeyPreview = true;
             this.KeyDown += new KeyEventHandler(controller.CheckKey);
+
+            GamePad();
         }
 
         public void Start()
@@ -37,6 +40,15 @@ namespace SnakeGame
             timer.Interval = 500;
             timer.Start();
         }
+
+        public void GamePad()
+        {
+            buttonRight.Click += (sender, args) => controller.GamePadCheck("Right");
+            buttonLeft.Click += (sender, args) => controller.GamePadCheck("Left");
+            buttonUp.Click += (sender, args) => controller.GamePadCheck("Up");
+            buttonDown.Click += (sender, args) => controller.GamePadCheck("Down");
+        }
+
         /* закрывание игра с подтверждением */
         protected override void OnFormClosing(FormClosingEventArgs eventArgs)
         {

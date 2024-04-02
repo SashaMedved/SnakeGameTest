@@ -10,7 +10,7 @@ namespace SnakeGame
 {
     internal class Model
     {
-        public Form1 form1;
+        public s form1;
         public PictureBox snake;
         public PictureBox food;
 
@@ -18,7 +18,7 @@ namespace SnakeGame
         public int dirX = 1;
         public int dirY = 0;
 
-        public Model(Form1 form1)
+        public Model(s form1)
         {
             this.form1 = form1;
             snake = form1.Controls["snake"] as PictureBox;            

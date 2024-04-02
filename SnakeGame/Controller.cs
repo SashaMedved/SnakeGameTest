@@ -41,5 +41,28 @@ namespace SnakeGame
                     break;
             }
         }
+
+        public void GamePadCheck(string move)
+        {
+            switch (move)
+            {
+                case "Right":
+                    model.dirY = 0;
+                    model.dirX = 1;
+                    break;
+                case "Left":
+                    model.dirX = -1;
+                    model.dirY = 0;
+                    break;
+                case "Up":
+                    model.dirX = 0;
+                    model.dirY = -1;
+                    break;
+                case "Down":
+                    model.dirX = 0;
+                    model.dirY = 1;
+                    break;
+            }
+        }
     }
 }

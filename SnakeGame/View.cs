@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,8 @@ namespace SnakeGame
         {
 
             form.BackColor = Color.White;
+
+
             for (int i=0; i <= width/ _sizeHead; i++)
             {
                 PictureBox pictureBox = new PictureBox();

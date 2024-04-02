@@ -33,6 +33,7 @@ namespace SnakeGame
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             snake = new PictureBox();
             timer = new System.Windows.Forms.Timer(components);
+            Score = new Label();
             ((System.ComponentModel.ISupportInitialize)snake).BeginInit();
             SuspendLayout();
             // 
@@ -46,6 +47,19 @@ namespace SnakeGame
             snake.TabIndex = 0;
             snake.TabStop = false;
             // 
+            // Score
+            // 
+            Score.Anchor = AnchorStyles.Left;
+            Score.AutoSize = true;
+            Score.BackColor = Color.Transparent;
+            Score.Font = new Font("Franklin Gothic Medium", 24F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            Score.Location = new Point(299, 560);
+            Score.Margin = new Padding(0);
+            Score.Name = "Score";
+            Score.Size = new Size(148, 37);
+            Score.TabIndex = 1;
+            Score.Text = "SCORE: 0";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -53,6 +67,7 @@ namespace SnakeGame
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.None;
             ClientSize = new Size(497, 706);
+            Controls.Add(Score);
             Controls.Add(snake);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MinimumSize = new Size(497, 730);
@@ -60,6 +75,7 @@ namespace SnakeGame
             Text = "Snake";
             ((System.ComponentModel.ISupportInitialize)snake).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
 
@@ -67,5 +83,6 @@ namespace SnakeGame
 
         public PictureBox snake;
         private System.Windows.Forms.Timer timer;
+        private Label Score;
     }
 }

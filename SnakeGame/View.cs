@@ -11,8 +11,6 @@ namespace SnakeGame
     {
         public void CreateMap(Form form, int width, int height, int sizePlane)
         {
-            form.BackColor = Color.Green;
-
             Label score = new Label();
             score.Text = "Score: 0";
             score.Location = new Point(810, 10);

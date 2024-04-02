@@ -2,9 +2,9 @@ namespace SnakeGame
 {
     public partial class Form1 : Form
     {
-        private int _width = 900;
-        private int _height = 800;
-        public int _sizePlane = 40;
+        private int _width = 496;
+        private int _height = 700;
+        public int _sizePlane = 20;
         private View view;
         private Controller controller;
         private Model model;

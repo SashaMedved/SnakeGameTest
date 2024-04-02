@@ -36,10 +36,11 @@
             // 
             // snake
             // 
-            snake.BackColor = Color.Red;
+            snake.BackColor = Color.Transparent;
+            snake.Image = Properties.Resources.snakeHead;
             snake.Location = new Point(0, 0);
             snake.Name = "snake";
-            snake.Size = new Size(40, 40);
+            snake.Size = new Size(20, 20);
             snake.TabIndex = 0;
             snake.TabStop = false;
             // 
@@ -47,6 +48,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = Properties.Resources.GameBoy;
             ClientSize = new Size(800, 450);
             Controls.Add(snake);
             Name = "Form1";

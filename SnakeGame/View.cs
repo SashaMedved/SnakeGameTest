@@ -18,20 +18,20 @@ namespace SnakeGame
             score.Location = new Point(810, 10);
             form.Controls.Add(score);
 
-            for (int i=0; i <= width/sizePlane; i++)
+            for (int i = 0; i <= width / sizePlane; i++)
             {
                 PictureBox pictureBox = new PictureBox();
-                pictureBox.BackColor = Color.Black;
+                pictureBox.BackColor = Color.DarkGray;
                 pictureBox.Location = new Point(0, sizePlane * i);
-                pictureBox.Size = new Size(width - 100, 1);
+                pictureBox.Size = new Size(width, 1);
                 form.Controls.Add(pictureBox);
             }
             for (int i = 0; i <= height / sizePlane; i++)
             {
                 PictureBox pictureBox = new PictureBox();
-                pictureBox.BackColor = Color.Black;
+                pictureBox.BackColor = Color.DarkGray;
                 pictureBox.Location = new Point(sizePlane * i, 0);
-                pictureBox.Size = new Size(1, width);
+                pictureBox.Size = new Size(1, height - 220);
                 form.Controls.Add(pictureBox);
             }
         }

@@ -13,7 +13,8 @@ namespace SnakeGame
         {
             Label score = new Label();
             score.Text = "Score: 0";
-            score.Location = new Point(810, 10);
+            score.Location = new Point(400, 600);
+            score.Size = new Size(100, 100);
             form.Controls.Add(score);
 
             for (int i = 0; i <= width / sizePlane; i++)

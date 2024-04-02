@@ -22,8 +22,8 @@ namespace SnakeGame
             Start();
 
             KeyPreview = true;
-            this.KeyDown += new KeyEventHandler(controller.Form1_KeyDown);
-
+            this.KeyDown += new KeyEventHandler(controller.CheckKey);
+            
             GamePad();
         }
 
@@ -39,10 +39,10 @@ namespace SnakeGame
 
         public void GamePad()
         {
-            buttonRight.Click += (sender, args) => controller.CheckKey(sender, Keys.D);
-            buttonLeft.Click += (sender, args) => controller.CheckKey(sender, Keys.A);
-            buttonUp.Click += (sender, args) => controller.CheckKey(sender, Keys.W);
-            buttonDown.Click += (sender, args) => controller.CheckKey(sender, Keys.S);
+            //buttonRight.Click += (sender, args) => controller.CheckKey(sender, "Right");
+            //buttonLeft.Click += (sender, args) => controller.CheckKey(sender, "Left");
+            //buttonUp.Click += (sender, args) => controller.CheckKey(sender, "Up");
+            //buttonDown.Click += (sender, args) => controller.CheckKey(sender, "Down");
         }
 
         protected override void OnFormClosing(FormClosingEventArgs eventArgs)

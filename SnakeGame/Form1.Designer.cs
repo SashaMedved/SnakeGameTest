@@ -62,7 +62,7 @@
             buttonLeft.Name = "buttonLeft";
             buttonLeft.Size = new Size(20, 20);
             buttonLeft.TabIndex = 2;
-            buttonLeft.UseVisualStyleBackColor = true;
+            buttonLeft.UseVisualStyleBackColor = true;         
             // 
             // buttonUp
             // 

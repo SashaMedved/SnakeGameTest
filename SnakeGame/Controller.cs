@@ -15,32 +15,27 @@ namespace SnakeGame
             this.model = model;
         }
 
-        public void Form1_KeyDown(object sender, KeyEventArgs e)
+        public void CheckKey(object sender, KeyEventArgs e)
         {
-            CheckKey(sender, e.KeyCode);
-        }
-
-        public void CheckKey(object sender, Keys keyCode)
-        {
-            switch (keyCode)
+            switch (e.KeyCode.ToString())
             {
-                case Keys.Right:
-                case Keys.D:
+                case "Right":
+                case "D":
                     model.dirY = 0;
                     model.dirX = 1;
                     break;
-                case Keys.A:
-                case Keys.Left:
+                case "Left":
+                case "A":
                     model.dirX = -1;
                     model.dirY = 0;
                     break;
-                case Keys.W:
-                case Keys.Up:
+                case "Up":
+                case "W":
                     model.dirX = 0;
                     model.dirY = -1;
                     break;
-                case Keys.S:
-                case Keys.Down:
+                case "Down":
+                case "S":
                     model.dirX = 0;
                     model.dirY = 1;
                     break;

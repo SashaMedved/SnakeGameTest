@@ -56,6 +56,8 @@ namespace SnakeGame
         public void StartProgram(Form form)
         {
             form.StartPosition = FormStartPosition.CenterScreen;
+            form.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            form.MaximizeBox = false;
         }
     }
 }

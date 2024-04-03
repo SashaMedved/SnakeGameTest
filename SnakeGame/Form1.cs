@@ -43,6 +43,7 @@ namespace SnakeGame
             buttonLeft.Click += (sender, args) => controller.CheckKey(sender, "A");
             buttonUp.Click += (sender, args) => controller.CheckKey(sender, "W");
             buttonDown.Click += (sender, args) => controller.CheckKey(sender, "S");
+            buttonExit.Click += (sender, args) => ;
         }
 
         protected override void OnFormClosing(FormClosingEventArgs eventArgs)

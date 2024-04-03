@@ -25,7 +25,6 @@ namespace SnakeGame
             switch (keyCode)
             {
                 case "D":
-
                     _model.dirY = 0;
                     _model.dirX = 1;
                     break;

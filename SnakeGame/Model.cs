@@ -15,6 +15,7 @@ namespace SnakeGame
         public PictureBox food;
         public int dirX = 1;
         public int dirY = 0;
+        public int rI, rJ;
 
         public Model(Form1 form1)
         {
@@ -25,19 +26,29 @@ namespace SnakeGame
 
         public void SnakeMove(object myObject, EventArgs eventArgs)
         {
-            snake.Location = new Point(snake.Location.X + form1._sizePlane * dirX, snake.Location.Y + form1._sizePlane * dirY);
+            EatFood();
+            MovingSnake(form1.score);
+            //snake.Location = new Point(snake.Location.X + form1._sizePlane * dirX, snake.Location.Y + form1._sizePlane * dirY);
         }
 
-        public void CreateFood(int width, int sizeBorder)
+        public void MovingSnake(int score)
+        {
+            for (int i = score; i >= 0; i--)
+            {
+                form1.snakeBody[i].Location = new Point(form1.snakeBody[i].Location.X + form1._sizePlane * dirX, form1.snakeBody[i].Location.Y + form1._sizePlane * dirY);
+            }
+        }
+
+        public void CreateFood()
         {
             Random r = new Random();
 
-            var rI = r.Next(20, width - sizeBorder);
-            int tempI = rI % sizeBorder;
+            rI = r.Next(20, form1._width - form1._sizePlane);
+            int tempI = rI % form1._sizePlane;
             rI -= tempI;
 
-            var rJ = r.Next(20, width - sizeBorder);
-            int tempJ = rJ % sizeBorder;
+            rJ = r.Next(20, form1._width - form1._sizePlane);
+            int tempJ = rJ % form1._sizePlane;
             rJ -= tempJ;
 
             food.Location = new Point(rI, rJ);
@@ -46,7 +57,18 @@ namespace SnakeGame
 
         public void EatFood()
         {
-            
+            if (form1.snakeBody[0].Location.X == rI && form1.snakeBody[0].Location.Y == rJ)
+            {
+                form1.ScoreText.Text = (form1.score + 1).ToString();
+                ++form1.score;
+                form1.snakeBody[form1.score] = new PictureBox();
+                form1.snakeBody[form1.score].Location = new Point(form1.snakeBody[form1.score - 1].Location.X + 20 * dirX, form1.snakeBody[form1.score - 1].Location.Y - 20 * dirY);
+                form1.snakeBody[form1.score].Size = new Size(form1._sizePlane, form1._sizePlane);
+                form1.snakeBody[form1.score].Image = Properties.Resources.body;
+                form1.snakeBody[form1.score].BackColor = Color.Transparent;
+                form1.Controls.Add(form1.snakeBody[form1.score]);
+                CreateFood();
+            }
         }
 
         public void BorderCheck()

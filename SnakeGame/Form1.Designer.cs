@@ -39,6 +39,7 @@
             TaskBar = new Panel();
             buttonExit = new Button();
             food = new PictureBox();
+            ScoreText = new Label();
             ((System.ComponentModel.ISupportInitialize)snake).BeginInit();
             TaskBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)food).BeginInit();
@@ -120,6 +121,16 @@
             food.TabIndex = 9;
             food.TabStop = false;
             // 
+            // ScoreText
+            // 
+            ScoreText.AutoSize = true;
+            ScoreText.BackColor = Color.Transparent;
+            ScoreText.Location = new Point(412, 570);
+            ScoreText.Name = "ScoreText";
+            ScoreText.Size = new Size(13, 15);
+            ScoreText.TabIndex = 10;
+            ScoreText.Text = "0";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -128,6 +139,7 @@
             BackgroundImageLayout = ImageLayout.None;
             ClientSize = new Size(496, 700);
             ControlBox = false;
+            Controls.Add(ScoreText);
             Controls.Add(food);
             Controls.Add(TaskBar);
             Controls.Add(buttonDown);
@@ -143,6 +155,7 @@
             TaskBar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)food).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -156,5 +169,6 @@
         private Panel TaskBar;
         private Button buttonExit;
         private PictureBox food;
+        public Label ScoreText;
     }
 }

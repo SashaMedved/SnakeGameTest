@@ -36,7 +36,7 @@
             buttonLeft = new Button();
             buttonUp = new Button();
             buttonDown = new Button();
-            panel1 = new Panel();
+            TaskBar = new Panel();
             ((System.ComponentModel.ISupportInitialize)snake).BeginInit();
             SuspendLayout();
             // 
@@ -86,14 +86,14 @@
             buttonDown.TabStop = false;
             buttonDown.UseVisualStyleBackColor = true;
             // 
-            // panel1
+            // TaskBar
             // 
-            panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
-            panel1.Enabled = false;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(496, 20);
-            panel1.TabIndex = 5;
+            TaskBar.BackgroundImage = (Image)resources.GetObject("TaskBar.BackgroundImage");
+            TaskBar.Enabled = false;
+            TaskBar.Location = new Point(0, 0);
+            TaskBar.Name = "TaskBar";
+            TaskBar.Size = new Size(496, 20);
+            TaskBar.TabIndex = 5;
             // 
             // Form1
             // 
@@ -101,7 +101,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.GameBoy1;
             ClientSize = new Size(609, 641);
-            Controls.Add(panel1);
+            Controls.Add(TaskBar);
             Controls.Add(buttonDown);
             Controls.Add(buttonUp);
             Controls.Add(buttonLeft);
@@ -122,6 +122,6 @@
         private Button buttonLeft;
         private Button buttonUp;
         private Button buttonDown;
-        private Panel panel1;
+        private Panel TaskBar;
     }
 }

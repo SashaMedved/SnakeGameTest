@@ -46,7 +46,7 @@
             // 
             snake.BackColor = Color.Transparent;
             snake.Image = Properties.Resources.snakeHead;
-            snake.Location = new Point(0, 0);
+            snake.Location = new Point(100, 140);
             snake.Name = "snake";
             snake.Size = new Size(20, 20);
             snake.TabIndex = 0;
@@ -54,36 +54,36 @@
             // 
             // buttonRight
             // 
-            buttonRight.Location = new Point(154, 561);
+            buttonRight.Location = new Point(137, 570);
             buttonRight.Name = "buttonRight";
-            buttonRight.Size = new Size(20, 20);
+            buttonRight.Size = new Size(49, 43);
             buttonRight.TabIndex = 1;
             buttonRight.TabStop = false;
             buttonRight.UseVisualStyleBackColor = true;
             // 
             // buttonLeft
             // 
-            buttonLeft.Location = new Point(73, 561);
+            buttonLeft.Location = new Point(37, 570);
             buttonLeft.Name = "buttonLeft";
-            buttonLeft.Size = new Size(20, 20);
+            buttonLeft.Size = new Size(49, 43);
             buttonLeft.TabIndex = 2;
             buttonLeft.TabStop = false;
             buttonLeft.UseVisualStyleBackColor = true;
             // 
             // buttonUp
             // 
-            buttonUp.Location = new Point(113, 520);
+            buttonUp.Location = new Point(90, 516);
             buttonUp.Name = "buttonUp";
-            buttonUp.Size = new Size(20, 20);
+            buttonUp.Size = new Size(43, 49);
             buttonUp.TabIndex = 3;
             buttonUp.TabStop = false;
             buttonUp.UseVisualStyleBackColor = true;
             // 
             // buttonDown
             // 
-            buttonDown.Location = new Point(113, 600);
+            buttonDown.Location = new Point(90, 614);
             buttonDown.Name = "buttonDown";
-            buttonDown.Size = new Size(20, 20);
+            buttonDown.Size = new Size(43, 49);
             buttonDown.TabIndex = 4;
             buttonDown.TabStop = false;
             buttonDown.UseVisualStyleBackColor = true;

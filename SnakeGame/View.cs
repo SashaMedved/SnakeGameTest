@@ -10,13 +10,7 @@ namespace SnakeGame
     internal class View
     {
         public void CreateMap(Form form, int width, int height, int sizePlane)
-        {
-            Label score = new Label();
-            score.Text = "Score: 0";
-            score.Location = new Point(400, 600);
-            score.Size = new Size(100, 100);
-            form.Controls.Add(score);
-
+        {           
             for (int i = 0; i <= width / sizePlane; i++)
             {
                 PictureBox pictureBox = new PictureBox();

@@ -34,11 +34,11 @@ namespace SnakeGame
 
         }
 
-        public void StartProgram(Form form)
+        public void StartProgram()
         {
-            form.StartPosition = FormStartPosition.CenterScreen;
-            form.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            form.MaximizeBox = false;
+            form1.StartPosition = FormStartPosition.CenterScreen;
+            form1.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            form1.MaximizeBox = false;
         }
     }
 }

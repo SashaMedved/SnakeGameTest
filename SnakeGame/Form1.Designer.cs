@@ -39,7 +39,6 @@
             TaskBar = new Panel();
             buttonExit = new Button();
             ((System.ComponentModel.ISupportInitialize)snake).BeginInit();
-            TaskBar.SuspendLayout();
             SuspendLayout();
             // 
             // snake
@@ -91,7 +90,6 @@
             // TaskBar
             // 
             TaskBar.BackgroundImage = (Image)resources.GetObject("TaskBar.BackgroundImage");
-            TaskBar.Controls.Add(buttonExit);
             TaskBar.Enabled = false;
             TaskBar.Location = new Point(0, 0);
             TaskBar.Name = "TaskBar";
@@ -100,12 +98,12 @@
             // 
             // buttonExit
             // 
-            buttonExit.BackColor = Color.Transparent;
+            buttonExit.BackColor = SystemColors.Control;
             buttonExit.FlatStyle = FlatStyle.Flat;
-            buttonExit.Location = new Point(467, 5);
+            buttonExit.Location = new Point(342, 84);
             buttonExit.Name = "buttonExit";
             buttonExit.Size = new Size(25, 10);
-            buttonExit.TabIndex = 6;
+            buttonExit.TabIndex = 8;
             buttonExit.Text = " ";
             buttonExit.UseVisualStyleBackColor = false;
             // 
@@ -117,6 +115,7 @@
             BackgroundImageLayout = ImageLayout.None;
             ClientSize = new Size(496, 700);
             ControlBox = false;
+            Controls.Add(buttonExit);
             Controls.Add(TaskBar);
             Controls.Add(buttonDown);
             Controls.Add(buttonUp);
@@ -128,7 +127,6 @@
             Name = "Form1";
             ShowInTaskbar = false;
             ((System.ComponentModel.ISupportInitialize)snake).EndInit();
-            TaskBar.ResumeLayout(false);
             ResumeLayout(false);
         }
 

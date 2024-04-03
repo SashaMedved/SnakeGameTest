@@ -38,8 +38,10 @@
             buttonDown = new Button();
             TaskBar = new Panel();
             buttonExit = new Button();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)snake).BeginInit();
             TaskBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // snake
@@ -109,6 +111,15 @@
             buttonExit.Text = " ";
             buttonExit.UseVisualStyleBackColor = false;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.Food;
+            pictureBox1.Location = new Point(320, 125);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(20, 20);
+            pictureBox1.TabIndex = 9;
+            pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -117,6 +128,7 @@
             BackgroundImageLayout = ImageLayout.None;
             ClientSize = new Size(496, 700);
             ControlBox = false;
+            Controls.Add(pictureBox1);
             Controls.Add(TaskBar);
             Controls.Add(buttonDown);
             Controls.Add(buttonUp);
@@ -129,6 +141,7 @@
             ShowInTaskbar = false;
             ((System.ComponentModel.ISupportInitialize)snake).EndInit();
             TaskBar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -142,5 +155,6 @@
         private Button buttonDown;
         private Panel TaskBar;
         private Button buttonExit;
+        private PictureBox pictureBox1;
     }
 }

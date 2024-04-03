@@ -38,10 +38,10 @@
             buttonDown = new Button();
             TaskBar = new Panel();
             buttonExit = new Button();
-            pictureBox1 = new PictureBox();
+            food = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)snake).BeginInit();
             TaskBar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)food).BeginInit();
             SuspendLayout();
             // 
             // snake
@@ -111,14 +111,14 @@
             buttonExit.Text = " ";
             buttonExit.UseVisualStyleBackColor = false;
             // 
-            // pictureBox1
+            // food
             // 
-            pictureBox1.Image = Properties.Resources.Food;
-            pictureBox1.Location = new Point(320, 125);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(20, 20);
-            pictureBox1.TabIndex = 9;
-            pictureBox1.TabStop = false;
+            food.Image = Properties.Resources.Food;
+            food.Location = new Point(320, 125);
+            food.Name = "food";
+            food.Size = new Size(20, 20);
+            food.TabIndex = 9;
+            food.TabStop = false;
             // 
             // Form1
             // 
@@ -128,7 +128,7 @@
             BackgroundImageLayout = ImageLayout.None;
             ClientSize = new Size(496, 700);
             ControlBox = false;
-            Controls.Add(pictureBox1);
+            Controls.Add(food);
             Controls.Add(TaskBar);
             Controls.Add(buttonDown);
             Controls.Add(buttonUp);
@@ -141,7 +141,7 @@
             ShowInTaskbar = false;
             ((System.ComponentModel.ISupportInitialize)snake).EndInit();
             TaskBar.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)food).EndInit();
             ResumeLayout(false);
         }
 
@@ -155,6 +155,6 @@
         private Button buttonDown;
         private Panel TaskBar;
         private Button buttonExit;
-        private PictureBox pictureBox1;
+        private PictureBox food;
     }
 }

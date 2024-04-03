@@ -25,6 +25,8 @@ namespace SnakeGame
             this.KeyDown += new KeyEventHandler(controller.Form1_KeyDown);
             
             GamePad();
+
+            model.CreateFood(_width, _sizePlane);
         }
 
         public void Start()

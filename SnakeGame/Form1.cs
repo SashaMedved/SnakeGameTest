@@ -35,7 +35,7 @@ namespace SnakeGame
             view.CreateMap(this, _width, _height, _sizePlane);
 
             timer.Tick += new EventHandler(model.SnakeMove);
-            timer.Interval = 500;
+            timer.Interval = 250;
             timer.Start();
         }
 

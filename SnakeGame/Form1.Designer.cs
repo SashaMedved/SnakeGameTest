@@ -29,12 +29,14 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             snake = new PictureBox();
             timer = new System.Windows.Forms.Timer(components);
             buttonRight = new Button();
             buttonLeft = new Button();
             buttonUp = new Button();
             buttonDown = new Button();
+            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)snake).BeginInit();
             SuspendLayout();
             // 
@@ -84,17 +86,28 @@
             buttonDown.TabStop = false;
             buttonDown.UseVisualStyleBackColor = true;
             // 
+            // panel1
+            // 
+            panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
+            panel1.Enabled = false;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(496, 20);
+            panel1.TabIndex = 5;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.GameBoy;
+            BackgroundImage = Properties.Resources.GameBoy1;
             ClientSize = new Size(609, 641);
+            Controls.Add(panel1);
             Controls.Add(buttonDown);
             Controls.Add(buttonUp);
             Controls.Add(buttonLeft);
             Controls.Add(buttonRight);
             Controls.Add(snake);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "Form1";
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)snake).EndInit();
@@ -109,5 +122,6 @@
         private Button buttonLeft;
         private Button buttonUp;
         private Button buttonDown;
+        private Panel panel1;
     }
 }

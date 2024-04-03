@@ -73,6 +73,16 @@ namespace SnakeGame.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap GameBoy1 {
+            get {
+                object obj = ResourceManager.GetObject("GameBoy1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap snakeHead {
             get {
                 object obj = ResourceManager.GetObject("snakeHead", resourceCulture);

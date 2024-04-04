@@ -12,9 +12,21 @@ namespace SnakeGame
 {
     public partial class Form2 : Form
     {
+
         public Form2()
         {
             InitializeComponent();
+
+        }
+
+        private void Music_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BackToForm1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

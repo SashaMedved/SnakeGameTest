@@ -1,4 +1,5 @@
 using System.Drawing.Text;
+using System.Media;
 
 namespace SnakeGame
 {
@@ -7,13 +8,14 @@ namespace SnakeGame
         public PictureBox[] snakeBody = new PictureBox[400];
         public int score = 0;
 
+        Font guno;
+
         public int _width = 496;
         public int _height = 700;
         public int _sizePlane = 20;
         private View view;
         private Controller controller;
         private Model model;
-        Font guno;
         public Form1()
         {
             InitializeComponent();
@@ -28,30 +30,34 @@ namespace SnakeGame
             LoadFont();
             ScoreText.Font = guno;
 
-            Start();
-
+            
             snakeBody[0] = new PictureBox();
             snakeBody[0].Location = new Point(200, 200);
             snakeBody[0].Size = new Size(_sizePlane, _sizePlane);
             snakeBody[0].Image = Properties.Resources.snakeHead;
             snakeBody[0].BackColor = Color.Transparent;
-            
+
             this.Controls.Add(snakeBody[0]);
 
             KeyPreview = true;
             this.KeyDown += new KeyEventHandler(controller.Form1_KeyDown);
-            
+
+            Start();
+
             GamePad();
 
             model.CreateFood();
-
         }
-        
+
         public void Start()
         {
             model.StartProgram();
             view.CreateMap(this, _width, _height, _sizePlane);
 
+        }
+
+        public void Timer()
+        {
             timer.Tick += new EventHandler(model.SnakeMove);
             timer.Interval = 250;
             timer.Start();
@@ -80,6 +86,20 @@ namespace SnakeGame
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result != DialogResult.Yes)
                 eventArgs.Cancel = true;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var myForm = new Form2();
+            myForm.Show();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Timer();
+            SoundPlayer sndPlayer = new SoundPlayer();
+            sndPlayer.Stream = Properties.Resources.snake;
+            sndPlayer.PlayLooping();
         }
     }
 }

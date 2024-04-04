@@ -39,6 +39,8 @@
             buttonExit = new Button();
             food = new PictureBox();
             ScoreText = new Label();
+            buttonMenu = new Button();
+            Strat = new Button();
             TaskBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)food).BeginInit();
             SuspendLayout();
@@ -132,6 +134,26 @@
             ScoreText.TabIndex = 10;
             ScoreText.Text = "0";
             // 
+            // buttonMenu
+            // 
+            buttonMenu.Location = new Point(380, 629);
+            buttonMenu.Name = "buttonMenu";
+            buttonMenu.Size = new Size(75, 23);
+            buttonMenu.TabIndex = 11;
+            buttonMenu.Text = "button1";
+            buttonMenu.UseVisualStyleBackColor = true;
+            buttonMenu.Click += button1_Click;
+            // 
+            // Strat
+            // 
+            Strat.Location = new Point(251, 641);
+            Strat.Name = "Strat";
+            Strat.Size = new Size(75, 23);
+            Strat.TabIndex = 12;
+            Strat.Text = "Start";
+            Strat.UseVisualStyleBackColor = true;
+            Strat.Click += button1_Click_1;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -140,6 +162,8 @@
             BackgroundImageLayout = ImageLayout.None;
             ClientSize = new Size(496, 700);
             ControlBox = false;
+            Controls.Add(Strat);
+            Controls.Add(buttonMenu);
             Controls.Add(ScoreText);
             Controls.Add(food);
             Controls.Add(TaskBar);
@@ -167,5 +191,7 @@
         private Button buttonExit;
         private PictureBox food;
         public Label ScoreText;
+        private Button buttonMenu;
+        private Button Strat;
     }
 }

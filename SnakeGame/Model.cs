@@ -11,7 +11,6 @@ namespace SnakeGame
     internal class Model
     {
         public Form1 form1;
-        //public PictureBox snake;
         public PictureBox food;
         public int dirX = 1;
         public int dirY = 0;
@@ -20,7 +19,6 @@ namespace SnakeGame
         public Model(Form1 form1)
         {
             this.form1 = form1;
-            //snake = form1.Controls["snake"] as PictureBox;
             food = form1.Controls["food"] as PictureBox;
         }
 
@@ -28,7 +26,6 @@ namespace SnakeGame
         {
             EatFood();
             MovingSnake(form1.score);
-            //snake.Location = new Point(snake.Location.X + form1._sizePlane * dirX, snake.Location.Y + form1._sizePlane * dirY);
         }
 
         public void MovingSnake(int score)

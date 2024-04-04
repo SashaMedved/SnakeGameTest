@@ -30,7 +30,6 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            snake = new PictureBox();
             timer = new System.Windows.Forms.Timer(components);
             buttonRight = new Button();
             buttonLeft = new Button();
@@ -40,20 +39,9 @@
             buttonExit = new Button();
             food = new PictureBox();
             ScoreText = new Label();
-            ((System.ComponentModel.ISupportInitialize)snake).BeginInit();
             TaskBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)food).BeginInit();
             SuspendLayout();
-            // 
-            // snake
-            // 
-            snake.BackColor = Color.Transparent;
-            snake.Image = Properties.Resources.snakeHead;
-            snake.Location = new Point(100, 140);
-            snake.Name = "snake";
-            snake.Size = new Size(20, 20);
-            snake.TabIndex = 0;
-            snake.TabStop = false;
             // 
             // buttonRight
             // 
@@ -146,12 +134,10 @@
             Controls.Add(buttonUp);
             Controls.Add(buttonLeft);
             Controls.Add(buttonRight);
-            Controls.Add(snake);
             FormBorderStyle = FormBorderStyle.None;
             MinimumSize = new Size(496, 700);
             Name = "Form1";
             ShowInTaskbar = false;
-            ((System.ComponentModel.ISupportInitialize)snake).EndInit();
             TaskBar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)food).EndInit();
             ResumeLayout(false);
@@ -159,8 +145,6 @@
         }
 
         #endregion
-
-        private PictureBox snake;
         private System.Windows.Forms.Timer timer;
         private Button buttonRight;
         private Button buttonLeft;

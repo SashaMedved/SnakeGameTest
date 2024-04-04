@@ -11,7 +11,7 @@ namespace SnakeGame
     internal class Model
     {
         public Form1 form1;
-        public PictureBox snake;
+        //public PictureBox snake;
         public PictureBox food;
         public int dirX = 1;
         public int dirY = 0;
@@ -20,7 +20,7 @@ namespace SnakeGame
         public Model(Form1 form1)
         {
             this.form1 = form1;
-            snake = form1.Controls["snake"] as PictureBox;
+            //snake = form1.Controls["snake"] as PictureBox;
             food = form1.Controls["food"] as PictureBox;
         }
 
@@ -81,6 +81,7 @@ namespace SnakeGame
             SoundPlayer sndPlayer = new SoundPlayer();
             sndPlayer.Stream = Properties.Resources.snake;
             sndPlayer.PlayLooping();
+
             form1.StartPosition = FormStartPosition.CenterScreen;
             form1.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             form1.MaximizeBox = false;

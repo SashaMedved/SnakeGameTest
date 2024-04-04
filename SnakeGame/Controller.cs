@@ -9,12 +9,10 @@ namespace SnakeGame
     internal class Controller
     {
         private Model _model;
-        private Form _form;
 
-        public Controller(Model model, Form form)
+        public Controller(Model model)
         {
             this._model = model;
-            this._form = form;
         }
 
         public void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -45,9 +43,9 @@ namespace SnakeGame
             }
         }
 
-        public void buttonEXIT_Click(object sender, EventArgs e)
+        public void buttonEXIT_Click(Form form, object sender, EventArgs e)
         {
-            _form.Close();
+            form.Close();
         }
     }
 }

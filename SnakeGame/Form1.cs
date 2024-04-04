@@ -13,6 +13,7 @@ namespace SnakeGame
         private View view;
         private Controller controller;
         private Model model;
+        Font guno;
         public Form1()
         {
             InitializeComponent();
@@ -24,6 +25,9 @@ namespace SnakeGame
             this.Width = _width;
             this.Height = _height;
 
+            LoadFont();
+            ScoreText.Font = guno;
+
             Start();
 
             snakeBody[0] = new PictureBox();
@@ -31,6 +35,7 @@ namespace SnakeGame
             snakeBody[0].Size = new Size(_sizePlane, _sizePlane);
             snakeBody[0].Image = Properties.Resources.snakeHead;
             snakeBody[0].BackColor = Color.Transparent;
+            
             this.Controls.Add(snakeBody[0]);
 
             KeyPreview = true;
@@ -39,8 +44,9 @@ namespace SnakeGame
             GamePad();
 
             model.CreateFood();
-        }
 
+        }
+        
         public void Start()
         {
             model.StartProgram();
@@ -58,6 +64,13 @@ namespace SnakeGame
             buttonUp.Click += (sender, args) => controller.CheckKey(sender, "W");
             buttonDown.Click += (sender, args) => controller.CheckKey(sender, "S");
             buttonExit.Click += (sender, args) => controller.buttonEXIT_Click(sender, args);
+        }
+
+        private void LoadFont()
+        {
+            PrivateFontCollection custom_font = new PrivateFontCollection();
+            custom_font.AddFontFile("guno.ttf");
+            guno = new Font(custom_font.Families[0], 18);
         }
 
 

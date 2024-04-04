@@ -55,6 +55,18 @@
             buttonRight.Text = " ";
             buttonRight.UseVisualStyleBackColor = false;
             // 
+            // buttonLeft
+            // 
+            buttonLeft.BackColor = Color.Transparent;
+            buttonLeft.FlatAppearance.BorderSize = 0;
+            buttonLeft.FlatStyle = FlatStyle.Flat;
+            buttonLeft.Location = new Point(39, 572);
+            buttonLeft.Name = "buttonLeft";
+            buttonLeft.Size = new Size(50, 40);
+            buttonLeft.TabIndex = 5;
+            buttonLeft.Text = " ";
+            buttonLeft.UseVisualStyleBackColor = false;
+            // 
             // buttonUp
             // 
             buttonUp.BackColor = Color.Transparent;
@@ -80,29 +92,6 @@
             buttonDown.Text = " ";
             buttonDown.UseVisualStyleBackColor = false;
             // 
-            // buttonLeft
-            // 
-            buttonLeft.BackColor = Color.Transparent;
-            buttonLeft.FlatAppearance.BorderSize = 0;
-            buttonLeft.FlatStyle = FlatStyle.Flat;
-            buttonLeft.Location = new Point(39, 572);
-            buttonLeft.Name = "buttonLeft";
-            buttonLeft.Size = new Size(50, 40);
-            buttonLeft.TabIndex = 5;
-            buttonLeft.Text = " ";
-            buttonLeft.UseVisualStyleBackColor = false;
-            // 
-            // buttonEXIT
-            // 
-            buttonExit.BackColor = Color.Transparent;
-            buttonExit.FlatAppearance.BorderSize = 0;
-            buttonExit.FlatStyle = FlatStyle.Flat;
-            buttonExit.Location = new Point(467, 5);
-            buttonExit.Name = "buttonExit";
-            buttonExit.Size = new Size(25, 10);
-            buttonExit.TabIndex = 6;
-            buttonExit.UseVisualStyleBackColor = false;
-            // 
             // TaskBar
             // 
             TaskBar.BackColor = Color.FromArgb(238, 229, 208);
@@ -112,7 +101,17 @@
             TaskBar.Name = "TaskBar";
             TaskBar.Size = new Size(497, 20);
             TaskBar.TabIndex = 8;
-            
+            // 
+            // buttonExit
+            // 
+            buttonExit.BackColor = Color.Transparent;
+            buttonExit.FlatAppearance.BorderSize = 0;
+            buttonExit.FlatStyle = FlatStyle.Flat;
+            buttonExit.Location = new Point(467, 5);
+            buttonExit.Name = "buttonExit";
+            buttonExit.Size = new Size(25, 10);
+            buttonExit.TabIndex = 6;
+            buttonExit.UseVisualStyleBackColor = false;
             // 
             // food
             // 
@@ -127,7 +126,7 @@
             // 
             ScoreText.AutoSize = true;
             ScoreText.BackColor = Color.Transparent;
-            ScoreText.Location = new Point(412, 570);
+            ScoreText.Location = new Point(412, 564);
             ScoreText.Name = "ScoreText";
             ScoreText.Size = new Size(13, 15);
             ScoreText.TabIndex = 10;

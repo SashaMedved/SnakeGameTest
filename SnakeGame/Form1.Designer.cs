@@ -45,39 +45,63 @@
             // 
             // buttonRight
             // 
-            buttonRight.Location = new Point(137, 570);
+            buttonRight.BackColor = Color.Transparent;
+            buttonRight.FlatAppearance.BorderSize = 0;
+            buttonRight.FlatStyle = FlatStyle.Flat;
+            buttonRight.Location = new Point(134, 572);
             buttonRight.Name = "buttonRight";
-            buttonRight.Size = new Size(49, 43);
-            buttonRight.TabIndex = 1;
-            buttonRight.TabStop = false;
-            buttonRight.UseVisualStyleBackColor = true;
-            // 
-            // buttonLeft
-            // 
-            buttonLeft.Location = new Point(37, 570);
-            buttonLeft.Name = "buttonLeft";
-            buttonLeft.Size = new Size(49, 43);
-            buttonLeft.TabIndex = 2;
-            buttonLeft.TabStop = false;
-            buttonLeft.UseVisualStyleBackColor = true;
+            buttonRight.Size = new Size(50, 40);
+            buttonRight.TabIndex = 2;
+            buttonRight.Text = " ";
+            buttonRight.UseVisualStyleBackColor = false;
             // 
             // buttonUp
             // 
-            buttonUp.Location = new Point(90, 516);
+            buttonUp.BackColor = Color.Transparent;
+            buttonUp.FlatAppearance.BorderSize = 0;
+            buttonUp.FlatStyle = FlatStyle.Flat;
+            buttonUp.ForeColor = Color.Transparent;
+            buttonUp.Location = new Point(91, 518);
             buttonUp.Name = "buttonUp";
-            buttonUp.Size = new Size(43, 49);
+            buttonUp.Size = new Size(40, 50);
             buttonUp.TabIndex = 3;
-            buttonUp.TabStop = false;
-            buttonUp.UseVisualStyleBackColor = true;
+            buttonUp.Text = " ";
+            buttonUp.UseVisualStyleBackColor = false;
             // 
             // buttonDown
             // 
-            buttonDown.Location = new Point(90, 614);
+            buttonDown.BackColor = Color.Transparent;
+            buttonDown.FlatAppearance.BorderSize = 0;
+            buttonDown.FlatStyle = FlatStyle.Flat;
+            buttonDown.Location = new Point(91, 615);
             buttonDown.Name = "buttonDown";
-            buttonDown.Size = new Size(43, 49);
+            buttonDown.Size = new Size(40, 50);
             buttonDown.TabIndex = 4;
-            buttonDown.TabStop = false;
-            buttonDown.UseVisualStyleBackColor = true;
+            buttonDown.Text = " ";
+            buttonDown.UseVisualStyleBackColor = false;
+            // 
+            // buttonLeft
+            // 
+            buttonLeft.BackColor = Color.Transparent;
+            buttonLeft.FlatAppearance.BorderSize = 0;
+            buttonLeft.FlatStyle = FlatStyle.Flat;
+            buttonLeft.Location = new Point(39, 572);
+            buttonLeft.Name = "buttonLeft";
+            buttonLeft.Size = new Size(50, 40);
+            buttonLeft.TabIndex = 5;
+            buttonLeft.Text = " ";
+            buttonLeft.UseVisualStyleBackColor = false;
+            // 
+            // buttonEXIT
+            // 
+            buttonExit.BackColor = Color.Transparent;
+            buttonExit.FlatAppearance.BorderSize = 0;
+            buttonExit.FlatStyle = FlatStyle.Flat;
+            buttonExit.Location = new Point(467, 5);
+            buttonExit.Name = "buttonExit";
+            buttonExit.Size = new Size(25, 10);
+            buttonExit.TabIndex = 6;
+            buttonExit.UseVisualStyleBackColor = false;
             // 
             // TaskBar
             // 
@@ -88,17 +112,7 @@
             TaskBar.Name = "TaskBar";
             TaskBar.Size = new Size(497, 20);
             TaskBar.TabIndex = 8;
-            // 
-            // buttonExit
-            // 
-            buttonExit.BackColor = Color.Transparent;
-            buttonExit.FlatStyle = FlatStyle.Flat;
-            buttonExit.Location = new Point(467, 5);
-            buttonExit.Name = "buttonExit";
-            buttonExit.Size = new Size(25, 10);
-            buttonExit.TabIndex = 8;
-            buttonExit.Text = " ";
-            buttonExit.UseVisualStyleBackColor = false;
+            
             // 
             // food
             // 

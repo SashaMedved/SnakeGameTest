@@ -1,3 +1,5 @@
+using System.Drawing.Text;
+
 namespace SnakeGame
 {
     public partial class Form1 : Form
@@ -57,6 +59,7 @@ namespace SnakeGame
             buttonDown.Click += (sender, args) => controller.CheckKey(sender, "S");
             buttonExit.Click += (sender, args) => controller.buttonEXIT_Click(sender, args);
         }
+
 
         protected override void OnFormClosing(FormClosingEventArgs eventArgs)
         {

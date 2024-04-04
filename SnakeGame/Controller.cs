@@ -3,18 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SnakeGame
 {
     internal class Controller
     {
         private Model _model;
+        public Form form;
 
-        public Controller(Model model)
+        public Controller(Model model, Form form)
         {
             this._model = model;
+            this.form = form;
         }
-
+        
         public void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             CheckKey(sender, e.KeyCode.ToString());
@@ -43,7 +46,7 @@ namespace SnakeGame
             }
         }
 
-        public void buttonEXIT_Click(Form form, object sender, EventArgs e)
+        public void buttonEXIT_Click(object sender, EventArgs e)
         {
             form.Close();
         }

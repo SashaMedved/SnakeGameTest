@@ -16,7 +16,7 @@ namespace SnakeGame
             InitializeComponent();
 
             model = new Model(this);
-            controller = new Controller(model);
+            controller = new Controller(model, this);
             view = new View();
 
             this.Width = _width;
@@ -55,7 +55,7 @@ namespace SnakeGame
             buttonLeft.Click += (sender, args) => controller.CheckKey(sender, "A");
             buttonUp.Click += (sender, args) => controller.CheckKey(sender, "W");
             buttonDown.Click += (sender, args) => controller.CheckKey(sender, "S");
-            buttonExit.Click += (sender, args) => controller.buttonEXIT_Click(this, sender, args);
+            buttonExit.Click += (sender, args) => controller.buttonEXIT_Click(sender, args);
         }
 
         protected override void OnFormClosing(FormClosingEventArgs eventArgs)

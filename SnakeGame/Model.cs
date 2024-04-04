@@ -30,10 +30,11 @@ namespace SnakeGame
 
         public void MovingSnake(int score)
         {
-            for (int i = score; i >= 0; i--)
+            for (int i = score; i >= 1; i--)
             {
-                form1.snakeBody[i].Location = new Point(form1.snakeBody[i].Location.X + form1._sizePlane * dirX, form1.snakeBody[i].Location.Y + form1._sizePlane * dirY);
+                form1.snakeBody[i].Location = form1.snakeBody[i - 1].Location;
             }
+            form1.snakeBody[0].Location = new Point(form1.snakeBody[0].Location.X + form1._sizePlane * dirX, form1.snakeBody[0].Location.Y + form1._sizePlane * dirY);
         }
 
         public void CreateFood()

@@ -11,30 +11,32 @@ namespace SnakeGame
     internal class Model
     {
         public Form1 form1;
+        public View view;
         public PictureBox food;
         public int dirX = 1;
         public int dirY = 0;
         public int rI, rJ;
 
-        public Model(Form1 form1)
+        public Model(Form1 form1, View view)
         {
             this.form1 = form1;
             food = form1.Controls["food"] as PictureBox;
+            this.view = view;
         }
 
         public void SnakeMove(object myObject, EventArgs eventArgs)
         {
             EatFood();
-            MovingSnake(form1.score);
+            MovingSnake();
         }
 
-        public void MovingSnake(int score)
+        public void MovingSnake()
         {
-            for (int i = score; i >= 1; i--)
+            for (int i = form1.score; i >= 1; i--)
             {
-                form1.snakeBody[i].Location = form1.snakeBody[i - 1].Location;
+                view.snakeBody[i].Location = view.snakeBody[i - 1].Location;
             }
-            form1.snakeBody[0].Location = new Point(form1.snakeBody[0].Location.X + form1._sizePlane * dirX, form1.snakeBody[0].Location.Y + form1._sizePlane * dirY);
+            view.snakeBody[0].Location = new Point(view.snakeBody[0].Location.X + form1._sizePlane * dirX, view.snakeBody[0].Location.Y + form1._sizePlane * dirY);
         }
 
         public void CreateFood()
@@ -55,16 +57,13 @@ namespace SnakeGame
 
         public void EatFood()
         {
-            if (form1.snakeBody[0].Location.X == rI && form1.snakeBody[0].Location.Y == rJ)
+            if (view.snakeBody[0].Location.X == rI && view.snakeBody[0].Location.Y == rJ)
             {
                 form1.ScoreText.Text = (form1.score + 1).ToString();
                 ++form1.score;
-                form1.snakeBody[form1.score] = new PictureBox();
-                form1.snakeBody[form1.score].Location = new Point(form1.snakeBody[form1.score - 1].Location.X + 20 * dirX, form1.snakeBody[form1.score - 1].Location.Y - 20 * dirY);
-                form1.snakeBody[form1.score].Size = new Size(form1._sizePlane, form1._sizePlane);
-                form1.snakeBody[form1.score].Image = Properties.Resources.body;
-                form1.snakeBody[form1.score].BackColor = Color.Transparent;
-                form1.Controls.Add(form1.snakeBody[form1.score]);
+
+                view.PaintBodySnake(dirX, dirY);
+
                 CreateFood();
             }
         }

@@ -2,9 +2,7 @@ namespace SnakeGame
 {
     public partial class Form1 : Form
     {
-        public PictureBox[] snakeBody = new PictureBox[400];
         public int score = 0;
-
         public int _width = 496;
         public int _height = 700;
         public int _sizePlane = 20;
@@ -15,34 +13,28 @@ namespace SnakeGame
         {
             InitializeComponent();
 
-            model = new Model(this);
+            view = new View(this, model);
+            model = new Model(this, view);
             controller = new Controller(model, this);
-            view = new View();
 
             this.Width = _width;
             this.Height = _height;
 
             Start();
-
-            snakeBody[0] = new PictureBox();
-            snakeBody[0].Location = new Point(200, 200);
-            snakeBody[0].Size = new Size(_sizePlane, _sizePlane);
-            snakeBody[0].Image = Properties.Resources.snakeHead;
-            snakeBody[0].BackColor = Color.Transparent;
-            this.Controls.Add(snakeBody[0]);
+            
+            view.PaintHeadSnake();
+            model.CreateFood();
 
             KeyPreview = true;
             this.KeyDown += new KeyEventHandler(controller.Form1_KeyDown);
             
-            GamePad();
-
-            model.CreateFood();
+            GamePad();           
         }
 
         public void Start()
         {
             model.StartProgram();
-            view.CreateMap(this, _width, _height, _sizePlane);
+            view.CreateMap(_width, _height, _sizePlane);
 
             timer.Tick += new EventHandler(model.SnakeMove);
             timer.Interval = 250;

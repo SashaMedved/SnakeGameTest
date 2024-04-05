@@ -1,4 +1,6 @@
-﻿namespace SnakeGame
+﻿using System.Windows.Forms;
+
+namespace SnakeGame
 {
     partial class Form2
     {
@@ -29,8 +31,8 @@
         private void InitializeComponent()
         {
             fileSystemWatcher1 = new FileSystemWatcher();
-            Music = new Button();
             BackToForm1 = new Button();
+            buttonMusic = new Button();
             ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).BeginInit();
             SuspendLayout();
             // 
@@ -39,34 +41,49 @@
             fileSystemWatcher1.EnableRaisingEvents = true;
             fileSystemWatcher1.SynchronizingObject = this;
             // 
-            // Music
-            // 
-            Music.Location = new Point(119, 66);
-            Music.Name = "Music";
-            Music.Size = new Size(75, 23);
-            Music.TabIndex = 0;
-            Music.Text = "muzik";
-            Music.UseVisualStyleBackColor = true;
-            Music.Click += Music_Click;
-            // 
             // BackToForm1
             // 
-            BackToForm1.Location = new Point(124, 237);
+            BackToForm1.FlatAppearance.BorderSize = 0;
+            BackToForm1.BackColor = Color.FromArgb(236, 108, 85);
+            BackToForm1.FlatStyle = FlatStyle.Popup;
+            BackToForm1.Location = new Point(75, 266);
+            BackToForm1.Margin = new Padding(0);
             BackToForm1.Name = "BackToForm1";
-            BackToForm1.Size = new Size(75, 23);
+            BackToForm1.Size = new Size(200, 50);
             BackToForm1.TabIndex = 1;
-            BackToForm1.Text = "back";
-            BackToForm1.UseVisualStyleBackColor = true;
+            BackToForm1.UseMnemonic = false;
+            BackToForm1.UseVisualStyleBackColor = false;
             BackToForm1.Click += BackToForm1_Click;
+            // 
+            // buttonMusic
+            // 
+            buttonMusic.FlatAppearance.BorderSize = 0;
+            buttonMusic.BackColor = Color.FromArgb(236, 108, 85);
+            buttonMusic.FlatStyle = FlatStyle.Popup;
+            buttonMusic.ForeColor = Color.Transparent;
+            buttonMusic.Location = new Point(75, 131);
+            buttonMusic.Margin = new Padding(0);
+            buttonMusic.Name = "buttonMusic";
+            buttonMusic.Size = new Size(200, 50);
+            buttonMusic.TabIndex = 0;
+            buttonMusic.UseMnemonic = false;
+            buttonMusic.UseVisualStyleBackColor = false;
+            buttonMusic.Click += Music_Click;
             // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(334, 361);
+            BackgroundImage = Properties.Resources.menu;
+            ClientSize = new Size(350, 400);
             Controls.Add(BackToForm1);
-            Controls.Add(Music);
+            Controls.Add(buttonMusic);
+            FormBorderStyle = FormBorderStyle.None;
+            MaximumSize = new Size(350, 400);
+            MinimumSize = new Size(350, 400);
             Name = "Form2";
+            ShowInTaskbar = false;
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form2";
             ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).EndInit();
             ResumeLayout(false);
@@ -76,6 +93,6 @@
 
         private FileSystemWatcher fileSystemWatcher1;
         private Button BackToForm1;
-        private Button Music;
+        private Button buttonMusic;
     }
 }

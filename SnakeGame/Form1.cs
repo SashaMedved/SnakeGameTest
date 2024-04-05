@@ -24,13 +24,15 @@ namespace SnakeGame
             controller = new Controller(model, this);
             view = new View();
 
+
             this.Width = _width;
             this.Height = _height;
 
             LoadFont();
-            ScoreText.Font = guno;
+            buttonStrat.Font = guno;
+            buttonMenu.Font = guno;
 
-            
+
             snakeBody[0] = new PictureBox();
             snakeBody[0].Location = new Point(200, 200);
             snakeBody[0].Size = new Size(_sizePlane, _sizePlane);
@@ -59,7 +61,7 @@ namespace SnakeGame
         public void Timer()
         {
             timer.Tick += new EventHandler(model.SnakeMove);
-            timer.Interval = 250;
+            timer.Interval = 500;
             timer.Start();
         }
 
@@ -70,16 +72,18 @@ namespace SnakeGame
             buttonUp.Click += (sender, args) => controller.CheckKey(sender, "W");
             buttonDown.Click += (sender, args) => controller.CheckKey(sender, "S");
             buttonExit.Click += (sender, args) => controller.buttonEXIT_Click(sender, args);
+            buttonMenu.Click += (sender, args) => controller.buttonMenu_Click(sender, args);
         }
+        
 
         private void LoadFont()
         {
             PrivateFontCollection custom_font = new PrivateFontCollection();
-            custom_font.AddFontFile("guno.ttf");
-            guno = new Font(custom_font.Families[0], 18);
+            custom_font.AddFontFile("guno.otf");
+            guno = new Font(custom_font.Families[0], 10);
         }
 
-
+        /*окно подтвержени€ выхода */
         protected override void OnFormClosing(FormClosingEventArgs eventArgs)
         {
             var result = MessageBox.Show("¬ы действительно хотиите закрыть игру?", "",
@@ -88,18 +92,27 @@ namespace SnakeGame
                 eventArgs.Cancel = true;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            var myForm = new Form2();
-            myForm.Show();
-        }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        /* таймер и музыка */
+        private void buttonStart_Click(object sender, EventArgs e)
         {
             Timer();
+
             SoundPlayer sndPlayer = new SoundPlayer();
             sndPlayer.Stream = Properties.Resources.snake;
             sndPlayer.PlayLooping();
         }
+
+        /* закрытие на esc*/
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == Keys.Escape)
+            {
+                Application.Exit();
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
+
+
     }
 }

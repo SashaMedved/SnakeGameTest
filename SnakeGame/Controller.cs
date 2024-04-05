@@ -50,5 +50,14 @@ namespace SnakeGame
         {
             form.Close();
         }
+
+
+        public void buttonMenu_Click(object sender, EventArgs e)
+        {
+            var myForm = new Form2();
+            myForm.Show();
+        }
+
+
     }
 }

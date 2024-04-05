@@ -13,6 +13,8 @@ namespace SnakeGame
     public partial class Form2 : Form
     {
 
+        private Controller controller;
+
         public Form2()
         {
             InitializeComponent();
@@ -24,9 +26,23 @@ namespace SnakeGame
 
         }
 
+
+        /* закрте окна меню */
         private void BackToForm1_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+        /* закрытие окна на esc*/
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == Keys.Escape)
+            {
+                this.Close();
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
+
+
     }
 }

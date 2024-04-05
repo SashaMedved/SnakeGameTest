@@ -1,4 +1,6 @@
-﻿namespace SnakeGame
+﻿using System.Windows.Forms;
+
+namespace SnakeGame
 {
     partial class Form1
     {
@@ -37,13 +39,15 @@
             buttonDown = new Button();
             TaskBar = new Panel();
             buttonExit = new Button();
+            buttonMenu = new Button();
             food = new PictureBox();
             ScoreText = new Label();
             buttonMenu = new Button();
-            Strat = new Button();
+            buttonStrat = new Button();
             TaskBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)food).BeginInit();
             SuspendLayout();
+
             // 
             // buttonRight
             // 
@@ -128,31 +132,44 @@
             // 
             ScoreText.AutoSize = true;
             ScoreText.BackColor = Color.Transparent;
-            ScoreText.Location = new Point(412, 564);
+            ScoreText.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            ScoreText.ForeColor = Color.FromArgb(54, 46, 45);
+            ScoreText.Location = new Point(400, 558);
+            ScoreText.Margin = new Padding(0);
             ScoreText.Name = "ScoreText";
-            ScoreText.Size = new Size(13, 15);
+            ScoreText.Size = new Size(33, 37);
             ScoreText.TabIndex = 10;
             ScoreText.Text = "0";
             // 
             // buttonMenu
             // 
-            buttonMenu.Location = new Point(380, 629);
+            buttonMenu.BackColor = Color.Transparent;
+            buttonMenu.FlatAppearance.BorderSize = 0;
+            buttonMenu.FlatStyle = FlatStyle.Flat;
+            buttonMenu.ForeColor = Color.FromArgb(236, 108, 85);
+            buttonMenu.Location = new Point(350, 630);
+            buttonMenu.Margin = new Padding(0);
             buttonMenu.Name = "buttonMenu";
-            buttonMenu.Size = new Size(75, 23);
+            buttonMenu.Size = new Size(80, 30);
             buttonMenu.TabIndex = 11;
-            buttonMenu.Text = "button1";
-            buttonMenu.UseVisualStyleBackColor = true;
-            buttonMenu.Click += button1_Click;
+            buttonMenu.Text = "Menu";
+            buttonMenu.UseVisualStyleBackColor = false;
             // 
-            // Strat
+            // buttonStrat
             // 
-            Strat.Location = new Point(251, 641);
-            Strat.Name = "Strat";
-            Strat.Size = new Size(75, 23);
-            Strat.TabIndex = 12;
-            Strat.Text = "Start";
-            Strat.UseVisualStyleBackColor = true;
-            Strat.Click += button1_Click_1;
+            buttonStrat.BackColor = Color.Transparent;
+            buttonStrat.FlatAppearance.BorderSize = 0;
+            buttonStrat.FlatStyle = FlatStyle.Flat;
+            buttonStrat.ForeColor = Color.FromArgb(236, 108, 85);
+            buttonStrat.Location = new Point(265, 630);
+            buttonStrat.Margin = new Padding(0);
+            buttonStrat.Name = "buttonStrat";
+            buttonStrat.Size = new Size(80, 30);
+            buttonStrat.TabIndex = 12;
+            buttonStrat.Text = "Start";
+            buttonStrat.UseMnemonic = false;
+            buttonStrat.UseVisualStyleBackColor = false;
+            buttonStrat.Click += buttonStart_Click;
             // 
             // Form1
             // 
@@ -162,7 +179,7 @@
             BackgroundImageLayout = ImageLayout.None;
             ClientSize = new Size(496, 700);
             ControlBox = false;
-            Controls.Add(Strat);
+            Controls.Add(buttonStrat);
             Controls.Add(buttonMenu);
             Controls.Add(ScoreText);
             Controls.Add(food);
@@ -172,14 +189,15 @@
             Controls.Add(buttonLeft);
             Controls.Add(buttonRight);
             FormBorderStyle = FormBorderStyle.None;
+            KeyPreview = true;
             MinimumSize = new Size(496, 700);
             Name = "Form1";
-            ShowInTaskbar = false;
             TaskBar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)food).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
+
 
         #endregion
         private System.Windows.Forms.Timer timer;
@@ -192,6 +210,7 @@
         private PictureBox food;
         public Label ScoreText;
         private Button buttonMenu;
-        private Button Strat;
+        private Button buttonStrat;
+
     }
 }

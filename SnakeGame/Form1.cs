@@ -1,3 +1,5 @@
+using System.Media;
+
 namespace SnakeGame
 {
     public partial class Form1 : Form
@@ -6,16 +8,18 @@ namespace SnakeGame
         public int _width = 496;
         public int _height = 700;
         public int _sizePlane = 20;
+
         private View view;
         private Controller controller;
         private Model model;
+
         public Form1()
         {
             InitializeComponent();
 
             view = new View(this, model);
             model = new Model(this, view);
-            controller = new Controller(model, this);
+            controller = new Controller(model, this, view);
 
             this.Width = _width;
             this.Height = _height;

@@ -9,12 +9,14 @@ namespace SnakeGame
 {
     internal class Controller
     {
-        private Model _model;
+        public Model model;
+        public View view;
         public Form1 form1;
 
-        public Controller(Model model, Form1 form1)
+        public Controller(Model model, Form1 form1, View view)
         {
-            this._model = model;
+            this.view = view;
+            this.model = model;
             this.form1 = form1;
         }
         
@@ -25,23 +27,25 @@ namespace SnakeGame
         
         public void CheckKey(object sender, string keyCode)
         {
+            Image flipImage = view.snakeBody[0].Image;
             switch (keyCode)
             {
                 case "D":
-                    _model.dirY = 0;
-                    _model.dirX = 1;
+                    flipImage.RotateFlip(RotateFlipType.Rotate90FlipY);
+                    model.dirY = 0;
+                    model.dirX = 1;
                     break;
                 case "A":
-                    _model.dirX = -1;
-                    _model.dirY = 0;
+                    model.dirX = -1;
+                    model.dirY = 0;
                     break;
                 case "W":
-                    _model.dirX = 0;
-                    _model.dirY = -1;
+                    model.dirX = 0;
+                    model.dirY = -1;
                     break;
                 case "S":
-                    _model.dirX = 0;
-                    _model.dirY = 1;
+                    model.dirX = 0;
+                    model.dirY = 1;
                     break;
             }
         }

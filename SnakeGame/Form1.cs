@@ -7,6 +7,7 @@ namespace SnakeGame
     public partial class Form1 : Form
     {
         Font guno;
+        SoundPlayer sndPlayer;
 
         public int score = 0;
         public int _width = 496;
@@ -26,6 +27,7 @@ namespace SnakeGame
             view = new View(this, model);
             model = new Model(this, view);
             controller = new Controller(model, this, view, form2);
+            sndPlayer = new SoundPlayer(Properties.Resources.snake);
 
             this.Width = _width;
             this.Height = _height;
@@ -41,7 +43,7 @@ namespace SnakeGame
             LoadFont();
             buttonStart.Font = guno;
             buttonMenu.Font = guno;
-
+            
             controller.GamePad();
         }
 
@@ -49,16 +51,14 @@ namespace SnakeGame
         {
             model.StartProgram();
             view.CreateMap(_width, _height, _sizePlane);
+            timer.Tick += new EventHandler(model.SnakeMove);
+            timer.Interval = 250;
         }
 
         public void Timer()
-        {
-            timer.Tick += new EventHandler(model.SnakeMove);
-            timer.Interval = 250;
+        {       
             timer.Start();
-
-            SoundPlayer sndPlayer = new SoundPlayer();
-            sndPlayer.Stream = Properties.Resources.snake;
+          
             sndPlayer.PlayLooping();
 
             buttonStart.Enabled = false;
@@ -75,7 +75,9 @@ namespace SnakeGame
         public void OpenMenu()
         {
             var form2 = new Form2(this);
-            form2.Show();
+            form2.Show();          
+            timer.Stop();
+            sndPlayer.Stop();
             this.Enabled = false;
         }
 

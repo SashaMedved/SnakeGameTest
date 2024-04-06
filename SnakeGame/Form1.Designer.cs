@@ -180,7 +180,6 @@ namespace SnakeGame
         }
 
         #endregion
-        private System.Windows.Forms.Timer timer;
         private Panel TaskBar;
         private PictureBox food;
         public Label ScoreText;
@@ -191,5 +190,6 @@ namespace SnakeGame
         public Button buttonStart;
         public Button buttonMenu;
         public Button buttonExit;
+        public System.Windows.Forms.Timer timer;
     }
 }

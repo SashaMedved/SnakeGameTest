@@ -24,6 +24,7 @@ namespace SnakeGame
         {
             this.Close();
             form1.Enabled = true;
+            form1.buttonStart.Enabled = true;
             form1.BringToFront();
         }
 
@@ -31,6 +32,7 @@ namespace SnakeGame
         {
             this.Close();
             form1.Enabled = true;
+            form1.buttonStart.Enabled = true;
             form1.BringToFront();
             form1.Close();
         }

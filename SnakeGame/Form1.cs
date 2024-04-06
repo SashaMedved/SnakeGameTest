@@ -21,15 +21,17 @@ namespace SnakeGame
         private Model model;
         private Form2 form2;
         private Form3 form3;
+        public DeadForm deadForm;
 
         public Form1()
         {
             InitializeComponent();
 
+            deadForm = new DeadForm(this);
             form3 = new Form3(this);
             form2 = new Form2(this);
             view = new View(this, model);
-            model = new Model(this, view);
+            model = new Model(this, view, deadForm);
             controller = new Controller(model, this, view, form2);
             sndPlayer = new SoundPlayer(Properties.Resources.snake);
 
@@ -70,16 +72,6 @@ namespace SnakeGame
 
             buttonStart.Enabled = false;
         }      
-
-        protected override void OnFormClosing(FormClosingEventArgs eventArgs)
-        {
-            timer.Stop();
-            buttonStart.Enabled = true;
-            var result = MessageBox.Show("¬ы действительно хотиите закрыть игру?", "",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result != DialogResult.Yes)
-                eventArgs.Cancel = true;
-        }
 
         public void OpenMenu()
         {

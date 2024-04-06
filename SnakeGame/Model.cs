@@ -13,6 +13,7 @@ namespace SnakeGame
     internal class Model
     {
         public Form1 form1;
+        public DeadForm deadForm;
         public View view;
         public PictureBox food;
         public int dirX = 1;
@@ -21,11 +22,12 @@ namespace SnakeGame
         public int count;
         public int replaceCount;
 
-        public Model(Form1 form1, View view)
+        public Model(Form1 form1, View view, DeadForm deadForm)
         {
             this.form1 = form1;
             food = form1.Controls["food"] as PictureBox;
             this.view = view;
+            this.deadForm = deadForm;
         }
 
         public void SnakeMove(object myObject, EventArgs eventArgs)
@@ -105,7 +107,12 @@ namespace SnakeGame
 
         public void SnakeDestroyTimer(object sender, EventArgs eventArgs)
         {
-            if (count == -1) form1.eatTimer.Stop();
+            if (count == -1)
+            {
+                form1.eatTimer.Stop();
+                form1.Enabled = false;
+                deadForm.Show();
+            }
             else form1.Controls.Remove(view.snakeBody[count]);
             count--;
         }

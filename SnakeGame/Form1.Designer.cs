@@ -173,7 +173,6 @@ namespace SnakeGame
             FormBorderStyle = FormBorderStyle.None;
             MinimumSize = new Size(496, 700);
             Name = "Form1";
-            ShowInTaskbar = false;
             TaskBar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)food).EndInit();
             ResumeLayout(false);
@@ -182,15 +181,15 @@ namespace SnakeGame
 
         #endregion
         private System.Windows.Forms.Timer timer;
-        private Button buttonRight;
-        private Button buttonLeft;
-        private Button buttonUp;
-        private Button buttonDown;
         private Panel TaskBar;
-        private Button buttonExit;
         private PictureBox food;
         public Label ScoreText;
-        private Button buttonStart;
-        private Button buttonMenu;
+        public Button buttonRight;
+        public Button buttonLeft;
+        public Button buttonUp;
+        public Button buttonDown;
+        public Button buttonStart;
+        public Button buttonMenu;
+        public Button buttonExit;
     }
 }

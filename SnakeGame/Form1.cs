@@ -16,14 +16,16 @@ namespace SnakeGame
         private View view;
         private Controller controller;
         private Model model;
+        private Form2 form2;
 
         public Form1()
         {
             InitializeComponent();
 
+            form2 = new Form2(this);
             view = new View(this, model);
             model = new Model(this, view);
-            controller = new Controller(model, this, view);
+            controller = new Controller(model, this, view, form2);
 
             this.Width = _width;
             this.Height = _height;
@@ -40,7 +42,7 @@ namespace SnakeGame
             buttonStart.Font = guno;
             buttonMenu.Font = guno;
 
-            GamePad();
+            controller.GamePad();
         }
 
         public void Start()
@@ -60,17 +62,7 @@ namespace SnakeGame
             sndPlayer.PlayLooping();
 
             buttonStart.Enabled = false;
-        }
-
-        public void GamePad()
-        {
-            buttonRight.Click += (sender, args) => controller.CheckKey(sender, "D");
-            buttonLeft.Click += (sender, args) => controller.CheckKey(sender, "A");
-            buttonUp.Click += (sender, args) => controller.CheckKey(sender, "W");
-            buttonDown.Click += (sender, args) => controller.CheckKey(sender, "S");
-            buttonExit.Click += (sender, args) => controller.buttonEXIT_Click(sender, args);
-            buttonStart.Click += (sender, args) => Timer();
-        }
+        }      
 
         protected override void OnFormClosing(FormClosingEventArgs eventArgs)
         {
@@ -78,6 +70,13 @@ namespace SnakeGame
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result != DialogResult.Yes)
                 eventArgs.Cancel = true;
+        }
+
+        public void OpenMenu()
+        {
+            var form2 = new Form2(this);
+            form2.Show();
+            this.Enabled = false;
         }
 
         private void LoadFont()

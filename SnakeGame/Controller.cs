@@ -22,12 +22,14 @@ namespace SnakeGame
         public Model model;
         public View view;
         public Form1 form1;
+        public Form2 form2;
 
-        public Controller(Model model, Form1 form1, View view)
+        public Controller(Model model, Form1 form1, View view, Form2 form2)
         {
             this.view = view;
             this.model = model;
             this.form1 = form1;
+            this.form2 = form2;
         }
         
         public void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -87,9 +89,16 @@ namespace SnakeGame
             model.dirY = dirY;
         }
 
-        public void buttonEXIT_Click(object sender, EventArgs e)
+        public void GamePad()
         {
-            form1.Close();
+            form1.buttonRight.Click += (sender, args) => CheckKey(sender, "D");
+            form1.buttonLeft.Click += (sender, args) => CheckKey(sender, "A");
+            form1.buttonUp.Click += (sender, args) => CheckKey(sender, "W");
+            form1.buttonDown.Click += (sender, args) => CheckKey(sender, "S");
+
+            form1.buttonExit.Click += (sender, args) => form1.Close();
+            form1.buttonStart.Click += (sender, args) => form1.Timer();
+            form1.buttonMenu.Click += (sender, args) => form1.OpenMenu();
         }
     }
 }

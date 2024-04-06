@@ -1,4 +1,6 @@
-﻿namespace SnakeGame
+﻿using System.Windows.Forms;
+
+namespace SnakeGame
 {
     partial class Form1
     {
@@ -39,6 +41,7 @@
             buttonExit = new Button();
             food = new PictureBox();
             ScoreText = new Label();
+            buttonStart = new Button();
             TaskBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)food).BeginInit();
             SuspendLayout();
@@ -121,6 +124,20 @@
             ScoreText.TabIndex = 10;
             ScoreText.Text = "0";
             // 
+            // buttonStart
+            // 
+            buttonStart.BackColor = Color.Transparent;
+            buttonStart.FlatAppearance.BorderSize = 0;
+            buttonStart.FlatStyle = FlatStyle.Flat;
+            buttonStart.ForeColor = Color.FromArgb(236, 108, 85);
+            buttonStart.Location = new Point(265, 614);
+            buttonStart.Margin = new Padding(0);
+            buttonStart.Name = "buttonStart";
+            buttonStart.Size = new Size(75, 23);
+            buttonStart.TabIndex = 11;
+            buttonStart.Text = "Start";
+            buttonStart.UseVisualStyleBackColor = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -129,6 +146,7 @@
             BackgroundImageLayout = ImageLayout.None;
             ClientSize = new Size(496, 700);
             ControlBox = false;
+            Controls.Add(buttonStart);
             Controls.Add(ScoreText);
             Controls.Add(food);
             Controls.Add(TaskBar);
@@ -156,5 +174,6 @@
         private Button buttonExit;
         private PictureBox food;
         public Label ScoreText;
+        private Button buttonStart;
     }
 }

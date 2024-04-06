@@ -75,11 +75,7 @@ namespace SnakeGame
         }     
 
         public void StartProgram()
-        {
-            SoundPlayer sndPlayer = new SoundPlayer();
-            sndPlayer.Stream = Properties.Resources.snake;
-            sndPlayer.PlayLooping();
-
+        {           
             form1.StartPosition = FormStartPosition.CenterScreen;
             form1.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             form1.MaximizeBox = false;

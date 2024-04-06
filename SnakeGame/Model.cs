@@ -19,6 +19,7 @@ namespace SnakeGame
         public int dirY = 0;
         public int rI, rJ;
         public int count;
+        public int replaceCount;
 
         public Model(Form1 form1, View view)
         {
@@ -80,24 +81,32 @@ namespace SnakeGame
                 {                 
                     form1.timer.Stop();
                     count = form1.score;
+                    replaceCount = form1.score;
+
                     form1.eatTimer.Tick += new EventHandler(SnakeDestroyTimer);
-                    form1.eatTimer.Interval = 400;
+                    form1.eatTimer.Interval = 350;
+                    form1.removeBodyTimer.Tick += new EventHandler(SnakeReplaceBody);
+                    form1.removeBodyTimer.Interval = 150;
+
+                    form1.removeBodyTimer.Start();
                     form1.eatTimer.Start();    
                     form1.score = form1.score - (form1.score - i + 1);
                 }
             }
         }
 
+        public void SnakeReplaceBody(object sender, EventArgs eventArgs)
+        {
+            if (replaceCount == -1) form1.removeBodyTimer.Stop();
+            else if (replaceCount == 0) view.snakeBody[0].Image = Properties.Resources.DeeadSnakeHead;
+            else view.snakeBody[replaceCount].Image = Properties.Resources.deadBody;
+            replaceCount--;
+        }
+
         public void SnakeDestroyTimer(object sender, EventArgs eventArgs)
         {
-            if (count == -1)
-            {
-                form1.eatTimer.Stop();
-            }
-            else
-            {
-                form1.Controls.Remove(view.snakeBody[count]);
-            }
+            if (count == -1) form1.eatTimer.Stop();
+            else form1.Controls.Remove(view.snakeBody[count]);
             count--;
         }
 

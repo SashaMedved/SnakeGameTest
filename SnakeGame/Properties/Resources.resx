@@ -142,4 +142,10 @@
   <data name="menu__2_" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\menu (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="deadBody" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\deadBody.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DeeadSnakeHead" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DeeadSnakeHead.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

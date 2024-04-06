@@ -44,6 +44,7 @@ namespace SnakeGame
             buttonStart = new Button();
             buttonMenu = new Button();
             eatTimer = new System.Windows.Forms.Timer(components);
+            removeBodyTimer = new System.Windows.Forms.Timer(components);
             TaskBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)food).BeginInit();
             SuspendLayout();
@@ -193,5 +194,6 @@ namespace SnakeGame
         public Button buttonExit;
         public System.Windows.Forms.Timer timer;
         public System.Windows.Forms.Timer eatTimer;
+        public System.Windows.Forms.Timer removeBodyTimer;
     }
 }

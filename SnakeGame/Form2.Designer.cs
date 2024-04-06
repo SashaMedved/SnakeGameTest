@@ -35,7 +35,7 @@
             // 
             // buttonBack
             // 
-            buttonBack.Location = new Point(35, 302);
+            buttonBack.Location = new Point(132, 211);
             buttonBack.Name = "buttonBack";
             buttonBack.Size = new Size(75, 23);
             buttonBack.TabIndex = 0;
@@ -45,7 +45,7 @@
             // 
             // buttonExitGame
             // 
-            buttonExitGame.Location = new Point(222, 302);
+            buttonExitGame.Location = new Point(132, 346);
             buttonExitGame.Name = "buttonExitGame";
             buttonExitGame.Size = new Size(75, 23);
             buttonExitGame.TabIndex = 1;
@@ -61,14 +61,15 @@
             buttonMusic.TabIndex = 2;
             buttonMusic.Text = "music";
             buttonMusic.UseVisualStyleBackColor = true;
+            buttonMusic.Click += buttonMusic_Click;
             // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(350, 400);
             BackgroundImage = Properties.Resources.menu__2_;
             BackgroundImageLayout = ImageLayout.None;
+            ClientSize = new Size(350, 400);
             Controls.Add(buttonMusic);
             Controls.Add(buttonExitGame);
             Controls.Add(buttonBack);

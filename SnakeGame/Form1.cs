@@ -7,12 +7,13 @@ namespace SnakeGame
     public partial class Form1 : Form
     {
         Font guno;
-        SoundPlayer sndPlayer;
+        public SoundPlayer sndPlayer;
 
         public int score = 0;
         public int _width = 496;
         public int _height = 700;
         public int _sizePlane = 20;
+        public bool flagMusic;
 
         private View view;
         private Controller controller;
@@ -58,8 +59,9 @@ namespace SnakeGame
         public void Timer()
         {       
             timer.Start();
-          
-            sndPlayer.PlayLooping();
+            
+            if (flagMusic == false)
+                sndPlayer.PlayLooping();
 
             buttonStart.Enabled = false;
         }      

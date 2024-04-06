@@ -32,7 +32,7 @@ namespace SnakeGame
             view = new View(this, model);
             model = new Model(this, view);
             controller = new Controller(model, this, view, form2);
-            sndPlayer = new SoundPlayer(Properties.Resources.snake);       
+            sndPlayer = new SoundPlayer(Properties.Resources.snake);
 
             this.Width = _width;
             this.Height = _height;

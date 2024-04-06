@@ -55,6 +55,7 @@ namespace SnakeGame
             // 
             LabelTextScreen.AutoSize = true;
             LabelTextScreen.BackColor = Color.Transparent;
+            LabelTextScreen.ForeColor = Color.White;
             LabelTextScreen.Location = new Point(123, 86);
             LabelTextScreen.Name = "LabelTextScreen";
             LabelTextScreen.Size = new Size(254, 15);
@@ -66,6 +67,7 @@ namespace SnakeGame
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
+            label1.ForeColor = Color.White;
             label1.Location = new Point(158, 24);
             label1.Name = "label1";
             label1.Size = new Size(183, 15);
@@ -76,6 +78,7 @@ namespace SnakeGame
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
+            label2.ForeColor = Color.White;
             label2.Location = new Point(111, 155);
             label2.Name = "label2";
             label2.Size = new Size(294, 15);
@@ -86,7 +89,7 @@ namespace SnakeGame
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ControlDarkDark;
+            BackColor = Color.Black;
             BackgroundImageLayout = ImageLayout.None;
             ClientSize = new Size(502, 707);
             Controls.Add(label2);

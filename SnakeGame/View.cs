@@ -12,7 +12,7 @@ namespace SnakeGame
     {
         public Form1 form1;
         public Model model;
-        public PictureBox[] snakeBody = new PictureBox[400];
+        public PictureBox[] snakeBody = new PictureBox[875];
 
         public View(Form1 form1, Model model)
         {

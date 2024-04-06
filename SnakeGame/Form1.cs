@@ -1,6 +1,7 @@
 using System.Drawing.Text;
 using System.Media;
 using System.Windows.Forms;
+using System.Windows.Forms.Design;
 
 namespace SnakeGame
 {
@@ -14,21 +15,24 @@ namespace SnakeGame
         public int _height = 700;
         public int _sizePlane = 20;
         public bool flagMusic;
+        public int count = 0;
 
         private View view;
         private Controller controller;
         private Model model;
         private Form2 form2;
+        private Form3 form3;
 
         public Form1()
         {
             InitializeComponent();
 
+            form3 = new Form3(this);
             form2 = new Form2(this);
             view = new View(this, model);
             model = new Model(this, view);
             controller = new Controller(model, this, view, form2);
-            sndPlayer = new SoundPlayer(Properties.Resources.snake);
+            sndPlayer = new SoundPlayer(Properties.Resources.snake);       
 
             this.Width = _width;
             this.Height = _height;
@@ -43,9 +47,11 @@ namespace SnakeGame
 
             LoadFont();
             buttonStart.Font = guno;
-            buttonMenu.Font = guno;
-            
+            buttonMenu.Font = guno;        
+
             controller.GamePad();
+
+            StartScreenMenu();
         }
 
         public void Start()
@@ -88,6 +94,14 @@ namespace SnakeGame
             PrivateFontCollection custom_font = new PrivateFontCollection();
             custom_font.AddFontFile("guno.otf");
             guno = new Font(custom_font.Families[0], 10);
+        }
+
+        public void StartScreenMenu()
+        {
+            var form3 = new Form3(this);
+            form3.Show();
+            form3.TopMost = true;
+            this.Enabled = false;
         }
     }
 }

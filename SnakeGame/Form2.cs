@@ -19,6 +19,8 @@ namespace SnakeGame
         {
             InitializeComponent();
             this.form1 = form1;
+
+            OnCheckMusic();
         }
 
         private void buttonBack_Click(object sender, EventArgs e)
@@ -38,10 +40,24 @@ namespace SnakeGame
             form1.Close();
         }
 
+        public void OnCheckMusic()
+        {
+            if (form1.flagMusic == false) buttonMusic.BackColor = Color.MediumSeaGreen;
+            else if (form1.flagMusic == true) buttonMusic.BackColor = Color.FromArgb(236, 108, 85);
+        }
+
         private void buttonMusic_Click(object sender, EventArgs e)
         {
-            if (form1.flagMusic == false) form1.flagMusic = true;
-            else if (form1.flagMusic == true) form1.flagMusic = false;
+            if (form1.flagMusic == false)
+            {
+                buttonMusic.BackColor = Color.FromArgb(236, 108, 85);
+                form1.flagMusic = true;
+            }
+            else if (form1.flagMusic == true)
+            {
+                buttonMusic.BackColor = Color.MediumSeaGreen;
+                form1.flagMusic = false;
+            }
         }
     }
 }

@@ -35,32 +35,38 @@
             // 
             // buttonBack
             // 
-            buttonBack.Location = new Point(132, 211);
+            buttonBack.BackColor = Color.FromArgb(236, 108, 85);
+            buttonBack.FlatAppearance.BorderSize = 0;
+            buttonBack.FlatStyle = FlatStyle.Flat;
+            buttonBack.Location = new Point(75, 198);
             buttonBack.Name = "buttonBack";
-            buttonBack.Size = new Size(75, 23);
+            buttonBack.Size = new Size(200, 50);
             buttonBack.TabIndex = 0;
-            buttonBack.Text = "back";
-            buttonBack.UseVisualStyleBackColor = true;
+            buttonBack.UseVisualStyleBackColor = false;
             buttonBack.Click += buttonBack_Click;
             // 
             // buttonExitGame
             // 
-            buttonExitGame.Location = new Point(132, 346);
+            buttonExitGame.BackColor = Color.FromArgb(236, 108, 85);
+            buttonExitGame.FlatAppearance.BorderSize = 0;
+            buttonExitGame.FlatStyle = FlatStyle.Flat;
+            buttonExitGame.Location = new Point(75, 329);
             buttonExitGame.Name = "buttonExitGame";
-            buttonExitGame.Size = new Size(75, 23);
+            buttonExitGame.Size = new Size(200, 50);
             buttonExitGame.TabIndex = 1;
-            buttonExitGame.Text = "exit";
-            buttonExitGame.UseVisualStyleBackColor = true;
+            buttonExitGame.UseVisualStyleBackColor = false;
             buttonExitGame.Click += buttonExitGame_Click;
             // 
             // buttonMusic
             // 
-            buttonMusic.Location = new Point(132, 81);
+            buttonMusic.BackColor = Color.MediumSeaGreen;
+            buttonMusic.FlatAppearance.BorderSize = 0;
+            buttonMusic.FlatStyle = FlatStyle.Flat;
+            buttonMusic.Location = new Point(75, 63);
             buttonMusic.Name = "buttonMusic";
-            buttonMusic.Size = new Size(75, 23);
+            buttonMusic.Size = new Size(200, 50);
             buttonMusic.TabIndex = 2;
-            buttonMusic.Text = "music";
-            buttonMusic.UseVisualStyleBackColor = true;
+            buttonMusic.UseVisualStyleBackColor = false;
             buttonMusic.Click += buttonMusic_Click;
             // 
             // Form2

@@ -73,6 +73,8 @@ namespace SnakeGame
 
         protected override void OnFormClosing(FormClosingEventArgs eventArgs)
         {
+            timer.Stop();
+            buttonStart.Enabled = true;
             var result = MessageBox.Show("¬ы действительно хотиите закрыть игру?", "",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result != DialogResult.Yes)

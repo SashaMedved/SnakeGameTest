@@ -15,7 +15,6 @@ namespace SnakeGame
         public int _height = 700;
         public int _sizePlane = 20;
         public bool flagMusic;
-        public int count = 0;
 
         private View view;
         private Controller controller;

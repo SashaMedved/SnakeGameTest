@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Media;
 using System.Numerics;
 using System.Windows.Forms;
+using System.Reflection;
 
 namespace SnakeGame
 {
@@ -17,6 +18,7 @@ namespace SnakeGame
         public int dirX = 1;
         public int dirY = 0;
         public int rI, rJ;
+        public int count;
 
         public Model(Form1 form1, View view)
         {
@@ -38,6 +40,7 @@ namespace SnakeGame
                 view.snakeBody[i].Location = view.snakeBody[i - 1].Location;
             }
             view.snakeBody[0].Location = new Point(view.snakeBody[0].Location.X + form1._sizePlane * dirX, view.snakeBody[0].Location.Y + form1._sizePlane * dirY);
+            eatIfSelf();
         }
 
         public void CreateFood()
@@ -67,6 +70,35 @@ namespace SnakeGame
 
                 CreateFood();
             }
+        }
+
+        public void eatIfSelf()
+        {
+            for (int i = 1; i < form1.score; ++i)
+            {
+                if (view.snakeBody[0].Location == view.snakeBody[i].Location)
+                {                 
+                    form1.timer.Stop();
+                    count = form1.score;
+                    form1.eatTimer.Tick += new EventHandler(SnakeDestroyTimer);
+                    form1.eatTimer.Interval = 400;
+                    form1.eatTimer.Start();    
+                    form1.score = form1.score - (form1.score - i + 1);
+                }
+            }
+        }
+
+        public void SnakeDestroyTimer(object sender, EventArgs eventArgs)
+        {
+            if (count == -1)
+            {
+                form1.eatTimer.Stop();
+            }
+            else
+            {
+                form1.Controls.Remove(view.snakeBody[count]);
+            }
+            count--;
         }
 
         public void BorderCheck()

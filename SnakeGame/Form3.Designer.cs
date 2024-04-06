@@ -89,7 +89,7 @@ namespace SnakeGame
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Black;
+            BackColor = Color.FromArgb(236, 108, 85);
             BackgroundImageLayout = ImageLayout.None;
             ClientSize = new Size(502, 707);
             Controls.Add(label2);

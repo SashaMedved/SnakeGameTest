@@ -43,6 +43,7 @@ namespace SnakeGame
             ScoreText = new Label();
             buttonStart = new Button();
             buttonMenu = new Button();
+            eatTimer = new System.Windows.Forms.Timer(components);
             TaskBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)food).BeginInit();
             SuspendLayout();
@@ -191,5 +192,6 @@ namespace SnakeGame
         public Button buttonMenu;
         public Button buttonExit;
         public System.Windows.Forms.Timer timer;
+        public System.Windows.Forms.Timer eatTimer;
     }
 }

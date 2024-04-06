@@ -38,7 +38,7 @@ namespace SnakeGame
 
             LoadFont();
             buttonStart.Font = guno;
-            buttonStart.Font = guno;
+            buttonMenu.Font = guno;
 
             GamePad();
         }

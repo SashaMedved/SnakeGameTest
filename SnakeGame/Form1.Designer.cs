@@ -42,6 +42,7 @@ namespace SnakeGame
             food = new PictureBox();
             ScoreText = new Label();
             buttonStart = new Button();
+            buttonMenu = new Button();
             TaskBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)food).BeginInit();
             SuspendLayout();
@@ -138,6 +139,20 @@ namespace SnakeGame
             buttonStart.Text = "Start";
             buttonStart.UseVisualStyleBackColor = false;
             // 
+            // buttonMenu
+            // 
+            buttonMenu.BackColor = Color.Transparent;
+            buttonMenu.FlatAppearance.BorderSize = 0;
+            buttonMenu.FlatStyle = FlatStyle.Flat;
+            buttonMenu.ForeColor = Color.FromArgb(236, 108, 85);
+            buttonMenu.Location = new Point(364, 614);
+            buttonMenu.Margin = new Padding(0);
+            buttonMenu.Name = "buttonMenu";
+            buttonMenu.Size = new Size(75, 23);
+            buttonMenu.TabIndex = 12;
+            buttonMenu.Text = "Menu";
+            buttonMenu.UseVisualStyleBackColor = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -146,6 +161,7 @@ namespace SnakeGame
             BackgroundImageLayout = ImageLayout.None;
             ClientSize = new Size(496, 700);
             ControlBox = false;
+            Controls.Add(buttonMenu);
             Controls.Add(buttonStart);
             Controls.Add(ScoreText);
             Controls.Add(food);
@@ -175,5 +191,6 @@ namespace SnakeGame
         private PictureBox food;
         public Label ScoreText;
         private Button buttonStart;
+        private Button buttonMenu;
     }
 }

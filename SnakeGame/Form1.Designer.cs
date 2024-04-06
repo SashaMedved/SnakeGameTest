@@ -114,7 +114,8 @@
             ScoreText.AutoSize = true;
             ScoreText.BackColor = Color.Transparent;
             ScoreText.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            ScoreText.Location = new Point(413, 557);
+            ScoreText.ForeColor = Color.FromArgb(54, 46, 45);
+            ScoreText.Location = new Point(406, 557);
             ScoreText.Name = "ScoreText";
             ScoreText.Size = new Size(33, 37);
             ScoreText.TabIndex = 10;

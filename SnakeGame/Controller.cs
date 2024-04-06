@@ -7,8 +7,18 @@ using System.Windows.Forms;
 
 namespace SnakeGame
 {
+    public enum Direction
+    {
+        Up,
+        Down,
+        Left,
+        Right
+    }
+
     internal class Controller
     {
+        private Direction currentDirection = Direction.Right;
+
         public Model model;
         public View view;
         public Form1 form1;
@@ -27,27 +37,52 @@ namespace SnakeGame
         
         public void CheckKey(object sender, string keyCode)
         {
-            Image flipImage = view.snakeBody[0].Image;
             switch (keyCode)
             {
                 case "D":
-                    flipImage.RotateFlip(RotateFlipType.Rotate90FlipY);
-                    model.dirY = 0;
-                    model.dirX = 1;
+                    if (form1.score != 0)
+                    {
+                        if (currentDirection != Direction.Left)
+                            AcceptXY(Direction.Right, 1, 0);
+                    }
+                    else
+                        AcceptXY(Direction.Right, 1, 0);
                     break;
                 case "A":
-                    model.dirX = -1;
-                    model.dirY = 0;
+                    if (form1.score != 0)
+                    {
+                        if (currentDirection != Direction.Right)
+                            AcceptXY(Direction.Left, -1, 0);
+                    }
+                    else
+                        AcceptXY(Direction.Left, -1, 0);
                     break;
                 case "W":
-                    model.dirX = 0;
-                    model.dirY = -1;
+                    if (form1.score != 0)
+                    {
+                        if (currentDirection != Direction.Down)
+                            AcceptXY(Direction.Up, 0, -1);
+                    }
+                    else
+                        AcceptXY(Direction.Up, 0, -1);
                     break;
                 case "S":
-                    model.dirX = 0;
-                    model.dirY = 1;
+                    if (form1.score != 0)
+                    {
+                        if (currentDirection != Direction.Up)
+                            AcceptXY(Direction.Down, 0, 1);
+                    }
+                    else
+                        AcceptXY(Direction.Down, 0, 1);                      
                     break;
             }
+        }
+
+        public void AcceptXY(Direction direction, int dirX, int dirY)
+        {
+            currentDirection = direction;
+            model.dirX = dirX;
+            model.dirY = dirY;
         }
 
         public void buttonEXIT_Click(object sender, EventArgs e)

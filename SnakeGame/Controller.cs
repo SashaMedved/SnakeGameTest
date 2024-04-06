@@ -37,6 +37,8 @@ namespace SnakeGame
         
         public void CheckKey(object sender, string keyCode)
         {
+            Direction direction = currentDirection;
+
             switch (keyCode)
             {
                 case "D":
@@ -52,7 +54,7 @@ namespace SnakeGame
                     if (form1.score != 0)
                     {
                         if (currentDirection != Direction.Right)
-                            AcceptXY(Direction.Left, -1, 0);
+                            AcceptXY(Direction.Left, -1, 0);                      
                     }
                     else
                         AcceptXY(Direction.Left, -1, 0);
@@ -61,7 +63,7 @@ namespace SnakeGame
                     if (form1.score != 0)
                     {
                         if (currentDirection != Direction.Down)
-                            AcceptXY(Direction.Up, 0, -1);
+                            AcceptXY(Direction.Up, 0, -1);                        
                     }
                     else
                         AcceptXY(Direction.Up, 0, -1);
@@ -73,7 +75,7 @@ namespace SnakeGame
                             AcceptXY(Direction.Down, 0, 1);
                     }
                     else
-                        AcceptXY(Direction.Down, 0, 1);                      
+                        AcceptXY(Direction.Down, 0, 1);                                          
                     break;
             }
         }

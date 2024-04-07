@@ -40,14 +40,13 @@ namespace SnakeGame
             // 
             buttonContinue.BackColor = Color.Transparent;
             buttonContinue.FlatAppearance.BorderSize = 0;
-            buttonContinue.FlatStyle = FlatStyle.Flat;
+            buttonContinue.FlatStyle = FlatStyle.Popup;
             buttonContinue.ForeColor = Color.IndianRed;
-            buttonContinue.Location = new Point(-9, 388);
+            buttonContinue.Location = new Point(152, 358);
             buttonContinue.Margin = new Padding(0);
             buttonContinue.Name = "buttonContinue";
-            buttonContinue.Size = new Size(526, 164);
+            buttonContinue.Size = new Size(200, 50);
             buttonContinue.TabIndex = 12;
-            buttonContinue.Text = "Start";
             buttonContinue.UseVisualStyleBackColor = false;
             buttonContinue.Click += buttonContinue_Click;
             // 
@@ -89,7 +88,8 @@ namespace SnakeGame
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(236, 108, 85);
+            BackColor = Color.Black;
+            BackgroundImage = Properties.Resources.playForm;
             BackgroundImageLayout = ImageLayout.None;
             ClientSize = new Size(502, 707);
             Controls.Add(label2);

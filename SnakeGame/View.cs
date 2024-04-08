@@ -10,8 +10,9 @@ namespace SnakeGame
 {
     internal class View
     {
-        public Form1 form1;
-        public Model model;
+        private Form1 form1;
+        private Model model;
+
         public PictureBox[] snakeBody = new PictureBox[875];
 
         public View(Form1 form1, Model model)

@@ -19,17 +19,17 @@ namespace SnakeGame
     {
         private Direction currentDirection = Direction.Right;
 
-        public Model model;
-        public View view;
-        public Form1 form1;
-        public Form2 form2;
+        private Model model;
+        private View view;
+        private Form1 form1;
+        private DeadForm deadForm;
 
-        public Controller(Model model, Form1 form1, View view, Form2 form2)
+        public Controller(Model model, Form1 form1, View view, DeadForm deadForm)
         {
             this.view = view;
             this.model = model;
             this.form1 = form1;
-            this.form2 = form2;
+            this.deadForm = deadForm;
         }
         
         public void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -99,6 +99,14 @@ namespace SnakeGame
             form1.buttonExit.Click += (sender, args) => form1.Close();
             form1.buttonStart.Click += (sender, args) => form1.Timer();
             form1.buttonMenu.Click += (sender, args) => form1.OpenMenu();
+
+            deadForm.buttonRestart.Click += (sender, args) =>
+            {
+                deadForm.Close();
+                view.PaintHeadSnake();
+                form1.Enabled = true;
+                form1.buttonStart.Enabled = true;
+            };
         }
     }
 }

@@ -24,12 +24,5 @@ namespace SnakeGame
             this.Close();
             form1.Close();
         }
-
-        private void buttonRestart_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            //view.PaintHeadSnake();
-            //form1.timer.Start();
-        }
     }
 }

@@ -60,7 +60,6 @@ namespace SnakeGame
             LabelTextScreen.Size = new Size(254, 15);
             LabelTextScreen.TabIndex = 1;
             LabelTextScreen.Text = "Для управления змейкой используйте WASD";
-            LabelTextScreen.Click += LabelTextScreen_Click;
             // 
             // label1
             // 

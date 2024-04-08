@@ -14,7 +14,9 @@ namespace SnakeGame
     public partial class Form3 : Form
     {
         private Form1 form1;
+
         public Font guno;
+
         public Form3(Form1 form1)
         {
             InitializeComponent();
@@ -34,11 +36,6 @@ namespace SnakeGame
             PrivateFontCollection custom_font = new PrivateFontCollection();
             custom_font.AddFontFile("guno.otf");
             guno = new Font(custom_font.Families[0], 30);
-        }
-
-        private void LabelTextScreen_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

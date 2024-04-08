@@ -12,10 +12,12 @@ namespace SnakeGame
 {
     internal class Model
     {
-        public Form1 form1;
-        public DeadForm deadForm;
-        public View view;
+        private Form1 form1;
+        private DeadForm deadForm;
+        private View view;
+
         public PictureBox food;
+
         public int dirX = 1;
         public int dirY = 0;
         public int rI, rJ;

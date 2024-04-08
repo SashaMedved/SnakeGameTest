@@ -54,7 +54,6 @@
             buttonRestart.Size = new Size(200, 50);
             buttonRestart.TabIndex = 2;
             buttonRestart.UseVisualStyleBackColor = false;
-            buttonRestart.Click += buttonRestart_Click;
             // 
             // DeadForm
             // 

@@ -19,20 +19,16 @@ namespace SnakeGame
         private View view;
         private Controller controller;
         private Model model;
-        private Form2 form2;
-        private Form3 form3;
-        public DeadForm deadForm;
+        private DeadForm deadForm;
 
         public Form1()
         {
             InitializeComponent();
 
             deadForm = new DeadForm(this);
-            form3 = new Form3(this);
-            form2 = new Form2(this);
             view = new View(this, model);
             model = new Model(this, view, deadForm);
-            controller = new Controller(model, this, view, form2);
+            controller = new Controller(model, this, view, deadForm);
             sndPlayer = new SoundPlayer(Properties.Resources.snake);
 
             this.Width = _width;

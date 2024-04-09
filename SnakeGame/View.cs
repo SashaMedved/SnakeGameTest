@@ -11,17 +11,15 @@ namespace SnakeGame
     internal class View
     {
         private Form1 form1;
-        private Model model;
 
-        public PictureBox[] snakeBody = new PictureBox[875];
+        public PictureBox[] snakeBody = new PictureBox[875]; //Массив тела змеи
 
-        public View(Form1 form1, Model model)
+        public View(Form1 form1)
         {
             this.form1 = form1;
-            this.model = model;
         }
 
-        public void PaintHeadSnake()
+        public void PaintHeadSnake() //Отрисовка головы
         {
             snakeBody[0] = new PictureBox();
             snakeBody[0].Location = new Point(200, 200);
@@ -31,7 +29,7 @@ namespace SnakeGame
             form1.Controls.Add(snakeBody[0]);
         }
 
-        public void CreateMap(int width, int height, int sizePlane)
+        public void CreateMap(int width, int height, int sizePlane) //Создание карты
         {           
             for (int i = 0; i <= width / sizePlane; i++)
             {
@@ -51,7 +49,7 @@ namespace SnakeGame
             }
         }
 
-        public void PaintBodySnake(int dirX, int dirY)
+        public void PaintBodySnake(int dirX, int dirY) //Отрисовка тела змеи
         {
             snakeBody[form1.score] = new PictureBox();
             snakeBody[form1.score].Location = new Point(snakeBody[form1.score - 1].Location.X + 20 * dirX, snakeBody[form1.score - 1].Location.Y - 20 * dirY);
@@ -59,6 +57,16 @@ namespace SnakeGame
             snakeBody[form1.score].Image = Properties.Resources.body;
             snakeBody[form1.score].BackColor = Color.Transparent;
             form1.Controls.Add(snakeBody[form1.score]);
+        }
+
+        public void PaintSnakeDeadBorder(int dirX, int dirY)
+        {
+            snakeBody[form1.score + 1] = new PictureBox();
+            snakeBody[form1.score + 1].Location = new Point(snakeBody[form1.score].Location.X + 20 * dirX, snakeBody[form1.score].Location.Y - 20 * dirY);
+            snakeBody[form1.score + 1].Size = new Size(form1._sizePlane, form1._sizePlane);
+            snakeBody[form1.score + 1].Image = Properties.Resources.body;
+            snakeBody[form1.score + 1].BackColor = Color.Transparent;
+            form1.Controls.Add(snakeBody[form1.score + 1]);
         }
     }
 }

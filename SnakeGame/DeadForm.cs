@@ -19,7 +19,7 @@ namespace SnakeGame
             this.form1 = form1;
         }
 
-        private void buttonExitFull_Click(object sender, EventArgs e)
+        private void buttonExitFull_Click(object sender, EventArgs e) //Выход из игры
         {
             this.Close();
             form1.Close();

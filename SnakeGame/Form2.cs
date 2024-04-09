@@ -23,7 +23,7 @@ namespace SnakeGame
             OnCheckMusic();
         }
 
-        private void buttonBack_Click(object sender, EventArgs e)
+        private void buttonBack_Click(object sender, EventArgs e) //Выход из меню
         {
             this.Close();
             form1.Enabled = true;
@@ -31,7 +31,7 @@ namespace SnakeGame
             form1.BringToFront();
         }
 
-        private void buttonExitGame_Click(object sender, EventArgs e)
+        private void buttonExitGame_Click(object sender, EventArgs e) //Выход их игры
         {
             this.Close();
             form1.Enabled = true;
@@ -40,13 +40,13 @@ namespace SnakeGame
             form1.Close();
         }
 
-        public void OnCheckMusic()
+        public void OnCheckMusic() //Проверка кнопки музыки
         {
             if (form1.flagMusic == false) buttonMusic.BackColor = Color.MediumSeaGreen;
             else if (form1.flagMusic == true) buttonMusic.BackColor = Color.FromArgb(236, 108, 85);
         }
 
-        private void buttonMusic_Click(object sender, EventArgs e)
+        private void buttonMusic_Click(object sender, EventArgs e) //Нажатие кнопки музыки
         {
             if (form1.flagMusic == false)
             {

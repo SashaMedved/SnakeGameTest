@@ -25,13 +25,13 @@ namespace SnakeGame
             buttonContinue.Font = guno;
         }
 
-        private void buttonContinue_Click(object sender, EventArgs e)
+        private void buttonContinue_Click(object sender, EventArgs e) //Нажатие кнопки PLAY
         {
             form1.Enabled = true;
             this.Close();
         }
 
-        private void LoadFont()
+        private void LoadFont() //Загрузка шрифта
         {
             PrivateFontCollection custom_font = new PrivateFontCollection();
             custom_font.AddFontFile("guno.otf");

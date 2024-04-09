@@ -18,6 +18,7 @@ namespace SnakeGame
 
         public PictureBox food;
 
+        public bool flagDeadCheckBorder;
         public int dirX = 1;
         public int dirY = 0;
         public int rI, rJ;
@@ -32,13 +33,14 @@ namespace SnakeGame
             this.deadForm = deadForm;
         }
 
-        public void SnakeMove(object myObject, EventArgs eventArgs)
+        public void SnakeMove(object myObject, EventArgs eventArgs) //Обработчик перемещения змеи
         {
+            BorderCheck();
             EatFood();
             MovingSnake();
         }
 
-        public void MovingSnake()
+        public void MovingSnake() //Перемещение змеи
         {
             for (int i = form1.score; i >= 1; i--)
             {
@@ -48,7 +50,7 @@ namespace SnakeGame
             eatIfSelf();
         }
 
-        public void CreateFood()
+        public void CreateFood() //Генерация фрукта в случайном месте
         {
             Random r = new Random();
 
@@ -64,7 +66,7 @@ namespace SnakeGame
             form1.Controls.Add(food);
         }
 
-        public void EatFood()
+        public void EatFood() //Если фрукт съедается змея растет
         {
             if (view.snakeBody[0].Location.X == rI && view.snakeBody[0].Location.Y == rJ)
             {
@@ -77,37 +79,48 @@ namespace SnakeGame
             }
         }
 
-        public void eatIfSelf()
+        public void eatIfSelf() //Если змея врезалась в саму себя
         {
             for (int i = 1; i < form1.score; ++i)
             {
                 if (view.snakeBody[0].Location == view.snakeBody[i].Location)
-                {                 
-                    form1.timer.Stop();
-                    count = form1.score;
-                    replaceCount = form1.score;
-
-                    form1.eatTimer.Tick += new EventHandler(SnakeDestroyTimer);
-                    form1.eatTimer.Interval = 350;
-                    form1.removeBodyTimer.Tick += new EventHandler(SnakeReplaceBody);
-                    form1.removeBodyTimer.Interval = 150;
-
-                    form1.removeBodyTimer.Start();
-                    form1.eatTimer.Start();    
+                {
+                    TimerSnakeDead();
                     form1.score = form1.score - (form1.score - i + 1);
                 }
             }
         }
 
-        public void SnakeReplaceBody(object sender, EventArgs eventArgs)
+        public void TimerSnakeDead() //Обработчик таймера при смерти
         {
-            if (replaceCount == -1) form1.removeBodyTimer.Stop();
+            form1.timer.Stop();
+            count = form1.score;
+            replaceCount = form1.score;
+
+            form1.eatTimer.Tick += new EventHandler(SnakeDestroyTimer);
+            form1.eatTimer.Interval = 350;
+            form1.removeBodyTimer.Tick += new EventHandler(SnakeReplaceBody);
+            form1.removeBodyTimer.Interval = 150;
+
+            form1.sndPlayer.Stop();
+            form1.removeBodyTimer.Start();
+            form1.eatTimer.Start();         
+        }
+
+        public void SnakeReplaceBody(object sender, EventArgs eventArgs) //Замена текстуры змеи на мертвую змею
+        {
+            if (replaceCount > 1) view.snakeBody[replaceCount].Image = Properties.Resources.deadBody;
+            else if (replaceCount == 1)
+            {
+                if (flagDeadCheckBorder) view.snakeBody[1].Image = Properties.Resources.DeeadSnakeHead;
+                else view.snakeBody[1].Image = Properties.Resources.deadBody;
+            }   
             else if (replaceCount == 0) view.snakeBody[0].Image = Properties.Resources.DeeadSnakeHead;
-            else view.snakeBody[replaceCount].Image = Properties.Resources.deadBody;
+            if (replaceCount == -1) form1.removeBodyTimer.Stop();
             replaceCount--;
         }
 
-        public void SnakeDestroyTimer(object sender, EventArgs eventArgs)
+        public void SnakeDestroyTimer(object sender, EventArgs eventArgs) //Удаление змеи с экрана
         {
             if (count == -1)
             {
@@ -119,12 +132,21 @@ namespace SnakeGame
             count--;
         }
 
-        public void BorderCheck()
+        public void BorderCheck() //Обработчик врезания в стену
         {
-
+            if (view.snakeBody[0].Location.X < 0 || view.snakeBody[0].Location.X > form1._width || view.snakeBody[0].Location.Y < 20 || view.snakeBody[0].Location.Y > form1._width - 20)
+            {
+                flagDeadCheckBorder = true;
+                form1.Controls.Remove(view.snakeBody[0]);
+                view.PaintSnakeDeadBorder(dirX, dirY);
+                view.snakeBody[1].Image = Properties.Resources.snakeHead;
+                form1.score++;
+                TimerSnakeDead();
+                form1.score = 0;
+            }          
         }     
 
-        public void StartProgram()
+        public void StartProgram() //Старт программы
         {           
             form1.StartPosition = FormStartPosition.CenterScreen;
             form1.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;

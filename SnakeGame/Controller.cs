@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,7 +8,7 @@ using System.Windows.Forms;
 
 namespace SnakeGame
 {
-    public enum Direction
+    public enum Direction //Направление змеи в настоящее время
     {
         Up,
         Down,
@@ -37,11 +38,11 @@ namespace SnakeGame
             CheckKey(sender, e.KeyCode.ToString());
         }
         
-        public void CheckKey(object sender, string keyCode)
+        public void CheckKey(object sender, string keyCode) //Проверка какая кнопка нажата
         {
             Direction direction = currentDirection;
 
-            switch (keyCode)
+            switch (keyCode) //Тут идет проверка чтобы змея не могла ползать сквозь себя
             {
                 case "D":
                     if (form1.score != 0)
@@ -89,7 +90,7 @@ namespace SnakeGame
             model.dirY = dirY;
         }
 
-        public void GamePad()
+        public void GamePad() //Обработчик нажатий кнопок на формах
         {
             form1.buttonRight.Click += (sender, args) => CheckKey(sender, "D");
             form1.buttonLeft.Click += (sender, args) => CheckKey(sender, "A");
@@ -103,9 +104,8 @@ namespace SnakeGame
             deadForm.buttonRestart.Click += (sender, args) =>
             {
                 deadForm.Close();
-                view.PaintHeadSnake();
-                form1.Enabled = true;
-                form1.buttonStart.Enabled = true;
+                Process.Start(Application.ExecutablePath);
+                form1.Close();
             };
         }
     }

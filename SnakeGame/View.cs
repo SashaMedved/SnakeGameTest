@@ -59,7 +59,7 @@ namespace SnakeGame
             form1.Controls.Add(snakeBody[form1.score]);
         }
 
-        public void PaintSnakeDeadBorder(int dirX, int dirY)
+        public void PaintSnakeDeadBorder(int dirX, int dirY) //Отрисовка мертвого тела змеи
         {
             snakeBody[form1.score + 1] = new PictureBox();
             snakeBody[form1.score + 1].Location = new Point(snakeBody[form1.score].Location.X + 20 * dirX, snakeBody[form1.score].Location.Y - 20 * dirY);

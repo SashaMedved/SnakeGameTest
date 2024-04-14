@@ -31,7 +31,7 @@ namespace SnakeGame
         private void InitializeComponent()
         {
             buttonContinue = new Button();
-            LabelTextScreen = new Label();
+            label3 = new Label();
             label1 = new Label();
             label2 = new Label();
             SuspendLayout();
@@ -50,34 +50,35 @@ namespace SnakeGame
             buttonContinue.UseVisualStyleBackColor = false;
             buttonContinue.Click += buttonContinue_Click;
             // 
-            // LabelTextScreen
+            // label3
             // 
-            LabelTextScreen.AutoSize = true;
-            LabelTextScreen.BackColor = Color.Transparent;
-            LabelTextScreen.ForeColor = Color.White;
-            LabelTextScreen.Location = new Point(123, 86);
-            LabelTextScreen.Name = "LabelTextScreen";
-            LabelTextScreen.Size = new Size(254, 15);
-            LabelTextScreen.TabIndex = 1;
-            LabelTextScreen.Text = "Для управления змейкой используйте WASD";
+            label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(54, 116);
+            label3.Name = "label3";
+            label3.Size = new Size(254, 15);
+            label3.TabIndex = 1;
+            label3.Text = "Для управления змейкой используйте WASD";
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.ForeColor = Color.White;
-            label1.Location = new Point(158, 24);
+            label1.Location = new Point(79, 62);
             label1.Name = "label1";
-            label1.Size = new Size(183, 15);
+            label1.Size = new Size(180, 15);
             label1.TabIndex = 13;
-            label1.Text = "Приветствуем вас в SnakeGame!";
+            label1.Text = "Приветствуем вас в SnakeGame";
+            label1.Click += label1_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
             label2.ForeColor = Color.White;
-            label2.Location = new Point(111, 155);
+            label2.Location = new Point(31, 174);
             label2.Name = "label2";
             label2.Size = new Size(294, 15);
             label2.TabIndex = 14;
@@ -94,7 +95,7 @@ namespace SnakeGame
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(buttonContinue);
-            Controls.Add(LabelTextScreen);
+            Controls.Add(label3);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Form3";
             Opacity = 0.9D;
@@ -107,7 +108,7 @@ namespace SnakeGame
         }
 
         #endregion
-        private Label LabelTextScreen;
+        private Label label3;
         private Button buttonContinue;
         private Label label1;
         private Label label2;

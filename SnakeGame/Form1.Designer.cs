@@ -51,12 +51,13 @@ namespace SnakeGame
             // 
             // buttonRight
             // 
-            buttonRight.Location = new Point(137, 570);
+            buttonRight.BackColor = SystemColors.Control;
+            buttonRight.Location = new Point(136, 570);
             buttonRight.Name = "buttonRight";
             buttonRight.Size = new Size(49, 43);
             buttonRight.TabIndex = 1;
             buttonRight.TabStop = false;
-            buttonRight.UseVisualStyleBackColor = true;
+            buttonRight.UseVisualStyleBackColor = false;
             // 
             // buttonLeft
             // 

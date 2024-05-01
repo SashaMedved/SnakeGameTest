@@ -10,15 +10,24 @@ using System.Reflection;
 
 namespace SnakeGame
 {
+    public enum Direction //Направление змеи в настоящее время
+    {
+        Up,
+        Down,
+        Left,
+        Right
+    }
+
     internal class Model
     {
         private Form1 form1;
         private DeadForm deadForm;
         private View view;
 
+        private Direction currentDirection = Direction.Right;
         public PictureBox food;
 
-        public bool flagDeadCheckBorder;
+        public bool flagDeadCheckBorder;     
         public int dirX = 1;
         public int dirY = 0;
         public int rI, rJ;
@@ -144,7 +153,59 @@ namespace SnakeGame
                 TimerSnakeDead();
                 form1.score = 0;
             }          
-        }     
+        }
+
+        public void CheckKey(object sender, string keyCode) //Проверка какая кнопка нажата
+        {
+            Direction direction = currentDirection;
+
+            switch (keyCode) //Тут идет проверка чтобы змея не могла ползать сквозь себя
+            {
+                case "D":
+                    if (form1.score != 0)
+                    {
+                        if (currentDirection != Direction.Left)
+                            AcceptXY(Direction.Right, 1, 0);
+                    }
+                    else
+                        AcceptXY(Direction.Right, 1, 0);
+                    break;
+                case "A":
+                    if (form1.score != 0)
+                    {
+                        if (currentDirection != Direction.Right)
+                            AcceptXY(Direction.Left, -1, 0);
+                    }
+                    else
+                        AcceptXY(Direction.Left, -1, 0);
+                    break;
+                case "W":
+                    if (form1.score != 0)
+                    {
+                        if (currentDirection != Direction.Down)
+                            AcceptXY(Direction.Up, 0, -1);
+                    }
+                    else
+                        AcceptXY(Direction.Up, 0, -1);
+                    break;
+                case "S":
+                    if (form1.score != 0)
+                    {
+                        if (currentDirection != Direction.Up)
+                            AcceptXY(Direction.Down, 0, 1);
+                    }
+                    else
+                        AcceptXY(Direction.Down, 0, 1);
+                    break;
+            }
+        }
+
+        public void AcceptXY(Direction direction, int dirX, int dirY)
+        {
+            currentDirection = direction;
+            this.dirX = dirX;
+            this.dirY = dirY;
+        }
 
         public void StartProgram() //Старт программы
         {           

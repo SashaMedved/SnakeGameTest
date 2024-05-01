@@ -28,7 +28,7 @@ namespace SnakeGame
             deadForm = new DeadForm(this);
             view = new View(this);
             model = new Model(this, view, deadForm);
-            controller = new Controller(model, this, view, deadForm);
+            controller = new Controller(model, this, deadForm);
             sndPlayer = new SoundPlayer(Properties.Resources.snake);
 
             this.Width = _width;
@@ -42,9 +42,7 @@ namespace SnakeGame
             KeyPreview = true;
             this.KeyDown += new KeyEventHandler(controller.Form1_KeyDown);  //Обработчик нажатий
 
-            LoadFont(); //Шрифты
-            buttonStart.Font = guno;
-            buttonMenu.Font = guno;        
+            LoadFont(); //Шрифты    
 
             controller.GamePad(); //Обработчик кнопок на формах
 
@@ -83,6 +81,8 @@ namespace SnakeGame
             PrivateFontCollection custom_font = new PrivateFontCollection();
             custom_font.AddFontFile("guno.otf");
             guno = new Font(custom_font.Families[0], 10);
+            buttonStart.Font = guno;
+            buttonMenu.Font = guno;
         }
 
         public void StartScreenMenu() //Начальное окно

@@ -101,15 +101,6 @@ namespace SnakeGame.Properties {
         }
         
         /// <summary>
-        ///   Поиск локализованного ресурса типа System.IO.UnmanagedMemoryStream, аналогичного System.IO.MemoryStream.
-        /// </summary>
-        internal static System.IO.UnmanagedMemoryStream eatFood {
-            get {
-                return ResourceManager.GetStream("eatFood", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Food {
@@ -125,16 +116,6 @@ namespace SnakeGame.Properties {
         internal static System.Drawing.Bitmap GameBoy {
             get {
                 object obj = ResourceManager.GetObject("GameBoy", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap GameBoy1 {
-            get {
-                object obj = ResourceManager.GetObject("GameBoy1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -160,7 +160,7 @@ namespace SnakeGame
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.GameBoy1;
+            BackgroundImage = Properties.Resources.GameBoy;
             BackgroundImageLayout = ImageLayout.None;
             ClientSize = new Size(496, 700);
             ControlBox = false;
